@@ -6,7 +6,7 @@
 
 MediaSlim X is a free, open-source local batch compression tool. Scan a folder, select images, MP4 videos or PDFs, and inspect what actually happened to each file. By default, it exports to a new directory while keeping originals, filenames and relative folder structure.
 
-**Source code is the only public download for now.** This first version focuses on the Windows standalone window. There is no ready-to-run Windows portable package or other binary download. GitHub's **Download ZIP** contains source and requires the environment below. Portable distribution is waiting on dependency licensing materials and clean-Windows acceptance.
+**Source code is the only public download for now.** This first version focuses on the Windows standalone window. There is no ready-to-run Windows portable package or other binary download. GitHub's **Download ZIP** contains source and requires the environment below, including a separate PDF dependency installation if you need PDF support. The planned portable package includes Python, the PDF engine and media engines, with no pip commands for users. It is awaiting final materials and clean-Windows acceptance and is not yet available.
 
 ## What it does
 
@@ -23,7 +23,7 @@ MediaSlim X is a free, open-source local batch compression tool. Scan a folder, 
 | --- | --- |
 | Images | JPG/JPEG, PNG and static WebP. Animated images and some unusual color formats are skipped. |
 | Video | Ordinary H.264, 8-bit SDR `yuv420p` MP4 with at most one AAC audio track; requires FFmpeg and ffprobe. HDR, rotation, subtitles and complex streams are skipped. |
-| PDF | **Optional** pikepdf support for eligible unencrypted static PDFs. It recompresses structure and eligible data without changing page dimensions. Encrypted, signed, form-based or annotated PDFs are unsupported. |
+| PDF | Source users can optionally install pikepdf; the planned Windows portable package includes the PDF engine. Eligible unencrypted static PDFs can be recompressed without changing page dimensions. Encrypted, signed, form-based or annotated PDFs are unsupported. |
 
 See the [v1 specification](docs/v1-spec.md) for exact limits and skip reasons. Image and video processing can be lossy; unsupported or failed files are kept or skipped, never reported as successful output.
 
@@ -37,15 +37,15 @@ See the [v1 specification](docs/v1-spec.md) for exact limits and skip reasons. I
 
 For the browser interface instead, run **`Start-MediaSlimX-Browser.cmd`**. It uses the same processing core but keeps its own task history. Do not open `mediaslimx/static/index.html` directly: the interface needs the local service.
 
-### Optional PDF support
+### Source installs only: enable PDF support
 
-The base requirements do not include pikepdf. After the first source launch, install it into the Windows virtual environment, then restart the tool:
+This command is **only for people running from source**, not for future portable-package users. The first source launch prepares the base dependencies automatically. If you also need PDF support, install pikepdf into the Windows virtual environment after that launch, then restart the tool:
 
 ```powershell
 .\.venv-win\Scripts\python.exe -m pip install -r requirements-pdf.txt
 ```
 
-Without this dependency, images and videos still work; PDFs show an actionable skip reason. See [platform status](docs/platforms.md) for notes on other development environments.
+Without this dependency in a source environment, images and videos still work; PDFs show an actionable skip reason. The planned Windows portable package includes PDF support and needs no Python, virtual environment or command above; it has not been released yet. See [platform status](docs/platforms.md) for notes on other development environments.
 
 ## Workflow and data boundaries
 

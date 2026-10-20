@@ -1,10 +1,10 @@
 # Windows 与 WSL：运行、路径和实测
 ## 实际运行结果
-截至2026-10-19，源码网页已验证Windows原生Python 3.12.14 + FFmpeg 9.0 + Windows Chrome，以及WSL2 Python 3.10.12 + FFmpeg 4.4.2 + Linux Chrome；Windows便携候选另用官方Python 3.13.16在本机实际WebView2中完成合成素材的五格式扫描、导出和结果检查。WSL结果不能当作独立Linux服务器、所有发行版或实体手机验收。
+截至2026-10-20，源码网页已验证Windows原生Python 3.12.14 + FFmpeg 9.0 + Windows Chrome，以及WSL2 Python 3.10.12 + FFmpeg 4.4.2 + Linux Chrome；Windows便携候选另用官方Python 3.13.16在本机实际WebView2中完成合成素材的五格式扫描、导出和结果检查。WSL结果不能当作独立Linux服务器、所有发行版或实体手机验收。
 
-源码运行需要相应平台Python 3.10+，Windows创建 `.venv-win`、Linux/WSL创建 `.venv`；虚拟环境依赖基础Python，不是可直接搬走的便携包。窗口源码首次准备还需要锁定SDK和Windows .NET Framework编译器。
+源码运行需要相应平台Python 3.10+，Windows创建 `.venv-win`、Linux/WSL创建 `.venv`；虚拟环境依赖基础Python，不是可直接搬走的便携包。窗口源码首次准备还需要锁定SDK和Windows .NET Framework编译器；源码环境的 PDF 依赖按 README 单独安装。
 
-以上安装要求针对源码启动。Windows x64便携包自带Python、Pillow、PDF、FFmpeg/ffprobe，使用独立数据与端口；最新本机候选 `official-python313-r1` 为 38,123,090B（36.36MiB），要求**已安装 WebView2 Evergreen Runtime**，不捆绑或自动安装 Runtime，不打开外部浏览器。旧候选各自保留原产物与证据，不把旧包的人工物理关窗结果转记新包。新候选清单保留 lxml/iconv 材料与真实干净 Windows 两项阻塞，仍仅供本机验证、未公开分发。见 [便携构建](packaging.md) 与 [Windows窗口](windows-window.md)。
+以上安装要求针对源码启动。Windows x64便携包自带Python、Pillow、PDF、FFmpeg/ffprobe，使用独立数据与端口；最新本机候选 `refresh-20261020-r2` 为 38,160,897B（36.39MiB），要求**已安装 WebView2 Evergreen Runtime**，不捆绑或自动安装 Runtime，不打开外部浏览器。便携用户无需运行 pip。旧候选各自保留原产物与证据，不把旧包的人工物理关窗结果转记新包。当前候选仍需最终材料重新封装与真实干净 Windows 验收，仅供本机验证、未公开分发。见 [便携构建](packaging.md) 与 [Windows窗口](windows-window.md)。
 
 ## 已完成验证快照（2026-10-17）
 
