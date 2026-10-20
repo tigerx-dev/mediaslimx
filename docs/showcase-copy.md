@@ -1,6 +1,6 @@
 # 项目展示文案 / Showcase copy
 
-状态：本地展示与发布准备，未上传、未发布。以下是可直接用于项目案例页、帖子、封面和演示字幕的文案；真实下载地址、最终版本和公开发布日期尚未填写。不要把候选包写成已公开上线，也不要虚构用户数、收入、压缩比例或 FIRANO 成果。
+状态：源码已在 [GitHub](https://github.com/tigerx-dev/mediaslimx) 公开；Windows 便携包、其他二进制下载和公开视频尚未发布。以下文案供项目案例页、帖子、封面和字幕使用。不要把本机候选包写成可下载版本，也不要虚构用户数、收入、压缩比例或 FIRANO 成果。
 
 ## 项目定位
 
@@ -30,7 +30,7 @@ A local image, video, and ordinary PDF batch optimizer for independent developer
 
 **建议标签 / Suggested tags**：Python · FastAPI · FFmpeg · Pillow · pikepdf · Local-first · Open source
 
-**行动按钮**：准备阶段使用“查看项目介绍”；真实仓库发布后再使用“查看源码”“Windows 下载”“观看演示”。没有真实链接时隐藏按钮，不放 `#` 或假下载地址。
+**行动按钮**：目前可使用“查看源码”，指向真实 GitHub 仓库；“Windows 下载”“观看演示”在实际文件和链接发布前继续隐藏，不放 `#` 或假地址。
 
 ## 案例页正文
 
@@ -52,7 +52,7 @@ A local image, video, and ordinary PDF batch optimizer for independent developer
 
 Python 核心配原生 HTML/CSS/JavaScript，无复杂前端构建或后台队列。Windows 使用独立窗口，也保留本地浏览器入口；Linux/服务器使用同一核心并可经 SSH 隧道访问。Windows 与 WSL 的运行时、目录和任务数据分开，避免路径混用。
 
-最新 `official-python313-r1` 独立窗口本机候选 ZIP 实测 36.36 MiB，尚不是可公开分发的最终包。便携包自带 Python 和媒体引擎；lxml/iconv 精确构建来源及 LGPL 重链接材料、真实干净 Windows 验收仍待完成，因此源码和便携包都尚未对外发布。
+目前公开的是源码。Windows 便携包仍需完成依赖材料核对和干净 Windows 验收，尚无可直接下载的安装或便携版本；本机候选包不作为案例下载入口。具体工程记录留在[发布指南](release-guide.md)，案例正文只说明用户实际可用的运行方式。
 
 ### 如实记录验证范围
 
@@ -64,7 +64,7 @@ MediaSlim X grew from a routine website-maintenance task: handling a mixed batch
 
 Export is the default. Users can explicitly choose backup-and-replace for folders on the service device; browser imports remain export-only. Restoration checks for later edits and skips conflicts. History archiving and import-copy cleanup are separate operations with different effects.
 
-One Python core serves a Chinese/English HTML/CSS/JavaScript interface. Windows uses a standalone window while retaining a browser entry; Linux and servers use the browser interface. Each runtime keeps separate paths and state. Source code is public; the latest local official-Python-3.13 standalone-window candidate measures 36.36 MiB as a ZIP, but is not a public distribution build. Exact lxml/iconv materials and clean-Windows acceptance remain pending, so no portable or other binary download is offered.
+One Python core serves a Chinese/English HTML/CSS/JavaScript interface. Windows uses a standalone window while retaining a browser entry; Linux and servers use the browser interface. Each runtime keeps separate paths and state. Source code is public; the Windows portable package is still being prepared and is not yet available for download.
 
 This is a small, complete utility case: useful defaults, visible file outcomes, recovery paths and practical packaging. Demonstrations use synthetic media. There are no claimed customers, revenues, fixed savings or real FIRANO performance results.
 
@@ -86,15 +86,15 @@ This is a small, complete utility case: useful defaults, visible file outcomes, 
 
 ## 短帖文案
 
-**准备阶段中文**：
+**源码发布中文**：
 
-> 最近把一个自用的小工具补成了完整流程：MediaSlim X。扫描目录或拖入媒体，默认导出保留原件，检查每个文件的真实结果；需要原位更新时再选备份覆盖。Python 核心配浏览器工作台，目前在做开源发布前的 Windows 便携验收和依赖材料整理。演示使用合成素材，暂未提供公开下载。
+> MediaSlim X 是一个开源的本地批量压缩工具，支持图片、符合条件的 MP4 和可选的普通 PDF。扫描目录或导入文件，默认导出保留原件，逐文件检查结果；需要原位更新时可先备份再覆盖。源码已公开，Windows 便携包仍待验收。演示数字仅来自合成素材。
 
-**Preparation-stage English**:
+**Source-release English**:
 
-> I have been turning a small personal utility into a complete workflow: MediaSlim X. Scan a folder or import media, export by default, and inspect each file's actual result. Backup-and-replace is available when original paths need updating. It uses a Python core and a browser workbench. Windows portable acceptance and dependency materials are being finalized before an open-source release; the demo uses synthetic media and there is no public download yet.
+> MediaSlim X is an open-source local batch compressor for images, eligible MP4 videos and optional ordinary PDFs. Scan a folder or import files, export by default and inspect each result. Backup-and-replace is available when original paths need updating. Source code is public; the Windows portable package is still awaiting acceptance. Demo numbers come only from synthetic media.
 
-发布后再用真实版本、链接与验收结果改写时态；不能提前把“正在准备”替换成“正式上线”。
+公开展示时可链接源码仓库；便携包、视频和真实站点案例应等各自完成验收与发布后再补链接和结果。
 
 ## 后续怎样展示成果
 
