@@ -76,6 +76,8 @@ Without this dependency, images and videos still work; PDFs show an actionable s
 2. Set a preset, optional dimensions and output mode. Review where originals, results and backups will go before starting.
 3. Inspect each result, preview and report. Restore from backups where available; later edits to a processed file cause restoration to skip that conflict.
 
+![Actual result page from a synthetic-media task, with per-file outcomes and measured savings](assets/showcase/results.en.png)
+
 Folder scans read candidate media only inside the selected scope. They do not follow symlinks and skip hidden, dependency, output and backup directories. Dropping files or folders through the browser sends **copies to the MediaSlim X service you are connected to**, so browser imports are export-only. When connected to a remote service, those copies go to that server. Browser imports are limited to 200 media files and 2 GiB per batch; scan a folder on the service device for larger sets.
 
 The tool does not upload media to third parties or use accounts, telemetry or external CDNs. Remote previews still travel over the connection you establish to the browser. The service binds to `127.0.0.1` by default; do not expose it directly to the public internet. See [privacy and security](docs/privacy-security.md).
