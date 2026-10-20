@@ -108,8 +108,15 @@ def main() -> None:
         versions = sorted(kits.glob("10.0.*"), key=lambda p: tuple(map(int, p.name.split("."))))
         if not versions:
             raise RuntimeError("Windows SDK missing on CI runner")
+        msbuild = shutil.which("msbuild.exe")
+        if not msbuild:
+            visual_studio = Path(os.environ["ProgramFiles"]) / "Microsoft Visual Studio"
+            matches = sorted(visual_studio.glob("2022/*/MSBuild/Current/Bin/MSBuild.exe"))
+            if not matches:
+                raise RuntimeError("Visual Studio MSBuild missing on CI runner")
+            msbuild = str(matches[-1])
         project = iconv / "MSVC17" / "libiconv_static" / "libiconv_static.vcxproj"
-        subprocess.run(["msbuild", str(project), "/m", "/v:minimal",
+        subprocess.run([msbuild, str(project), "/m", "/v:minimal",
                         "/p:Configuration=Release", "/p:Platform=x64",
                         f"/p:WindowsTargetPlatformVersion={versions[-1].name}"], check=True)
         rebuilt = iconv / "MSVC17" / "x64" / "lib" / "libiconv_a.lib"
