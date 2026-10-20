@@ -30,9 +30,9 @@ The new window bundle includes its Python/media environment and requires an alre
 
 ## 界面形态与安装包不是一回事
 
-Windows 独立窗口源码与 WebView2 助手已实现，复用现有工作台与 Python 核心。窗口版双击进入自己的窗口，不启动外部浏览器；繁忙时关窗先确认，取消剩余工作后等待媒体事务与已接纳请求安全结束，再停止自己的后台。选择继续使用则不退出，不按名称终止其他 Python、FFmpeg 或浏览器进程。
+Windows 独立窗口源码与 WebView2 助手已实现，复用现有工作台与 Python 核心。窗口版双击进入自己的窗口，不启动外部浏览器；繁忙时关窗先确认。“保留进度并退出”会等待当前文件与已接纳请求安全收尾，保留已完成结果和剩余清单，下次由用户主动继续。选择继续使用则不退出，不按名称终止其他 Python、FFmpeg 或浏览器进程。
 
-源码默认入口 `Start-MediaSlimX.cmd` 使用 Windows `pythonw.exe`、`.mediaslimx/windows-window` 与 8767–8866 中可用端口；网页兼容入口 `Start-MediaSlimX-Browser.cmd` 保留 8766 / `.mediaslimx/windows`。其他环境的源码入口不纳入本次发行介绍。PWA 与 Chrome 扩展未实现，不作为本次发行内容。窗口详细边界见 [windows-window.md](windows-window.md)。
+源码日常双击入口 `Start-MediaSlimX.vbs` 使用无控制台准备流程和 Windows `pythonw.exe`；准备失败时运行 `Start-MediaSlimX.cmd` 查看错误。窗口数据位于 `.mediaslimx/windows-window`，端口从 8767–8866 选择。网页兼容入口 `Start-MediaSlimX-Browser.cmd` 保留 8766 / `.mediaslimx/windows`。其他环境的源码入口不纳入本次发行介绍。PWA 与 Chrome 扩展未实现，不作为本次发行内容。窗口详细边界见 [windows-window.md](windows-window.md)。
 
 Windows standalone-window source is implemented; its own service drains safely on close. Local WebView2 interactions have been tested on the developer machine, while the final window payload and clean-Windows acceptance remain distinct verification gates. PWA and Chrome extensions are not implemented.
 
