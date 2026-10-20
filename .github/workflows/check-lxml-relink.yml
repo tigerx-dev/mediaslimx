@@ -1,0 +1,19 @@
+name: Verify lxml iconv relink material
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  relink:
+    runs-on: windows-2022
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Rebuild iconv and relink lxml from pinned public sources
+        run: python scripts/verify-lxml-relink.py
