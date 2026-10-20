@@ -262,9 +262,9 @@ def main():
         ("OpenSSL-CPython", f"https://github.com/openssl/openssl/releases/download/openssl-{openssl_version}/openssl-{openssl_version}.tar.gz"),
         ("SQLite-CPython", f"https://github.com/python/cpython-source-deps/archive/refs/tags/{sqlite_source_tag}.tar.gz"),
         ("lxml-wheel-recipe", "https://github.com/lxml/lxml/archive/refs/tags/lxml-6.1.3-1.tar.gz"),
-        # This was the latest Windows-library release when lxml 6.1.3 was
-        # published. The release recipe selects the latest library release at
-        # build time, but this alone does NOT prove the PyPI wheel used it.
+        # The 6.1.3-1 Windows cp313 build log names this release and its four
+        # win64 archives. docs/distribution-materials.md records the exact
+        # release/job URLs and matching wheel SHA-256.
         ("lxml-Windows-build", "https://github.com/lxml/libxml2-win-binaries/archive/refs/tags/2026.05.17.tar.gz"),
         # Exact gitlinks in the official lxml Windows build tag 2026.05.17.
         # The fork includes the actual MSVC projects and source, unlike a
@@ -296,8 +296,8 @@ def main():
         except Exception as error:
             blockers.append(f"{name} source/audit material: {type(error).__name__}: {error}")
     # Keep the four prebuilt static libraries and headers separate from their
-    # source trees. They are plausible 6.1.3 Windows inputs, not proof that
-    # the particular PyPI wheel was linked against them.
+    # source trees. Upstream cp313 build logs identify these as wheel inputs;
+    # retaining them does not by itself verify LGPL source/relink completeness.
     for filename in ("iconv-1.17.1.win64.zip", "libxml2-2.11.9.win64.zip",
                      "libxslt-1.1.45.win64.zip", "zlib-1.3.2.win64.zip"):
         url = ("https://github.com/lxml/libxml2-win-binaries/releases/download/"
@@ -319,8 +319,10 @@ def main():
                                              hash_authority="locally-measured-from-official-https-source"))
         except Exception as error:
             blockers.append(f"Microsoft terms/reference: {type(error).__name__}: {error}")
-    # These cannot be cleared by downloading an arbitrary similarly named tar.
-    blockers.append("Confirm exact lxml wheel provenance against the pinned Windows build tag and assess its LGPL rebuild/relink material completeness")
+    # The exact wheel provenance is recorded in docs/distribution-materials.md.
+    # Clearing this still needs a practical source/relink check, not merely
+    # archive availability or matching version labels.
+    blockers.append("Validate LGPL iconv source/build/relink materials for the statically linked lxml Windows wheel")
     if not official_python_verified:
         blockers.append("CPython supplier license includes Microsoft/Tcl/Tk terms and OpenSSL source notices are retained; libffi DLL exact provenance/applicable notice remains independently unconfirmed")
     credits = ("MediaSlim X third-party materials / 第三方材料\n\n"

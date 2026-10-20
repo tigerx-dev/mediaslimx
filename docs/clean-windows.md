@@ -12,7 +12,7 @@ Hyper-V 与 VirtualMachinePlatform 原已启用、管理服务运行；普通会
 
 Windows Sandbox was enabled with explicit approval and `-NoRestart`; Windows reports `RestartNeeded=true`, and its executable is not present yet. No restart or clean Windows guest execution has occurred. Host self-tests remain separate from clean-OS results.
 
-2026-10-20 当前待验对象是重新构建的官方 Python 3.13.16 独立窗口候选 `refresh-20261020-r2`，运行 ZIP 为 38,160,897 字节（36.39 MiB）、SHA-256 `6a188384632f2715b53746de03f92f27bd93f4981c27673ee09440c5eee080f2`。其实际解压 EXE 的合成 PDF worker 四项和隔离 Windows WebView2 主流程 12 项通过；空闲退出后测试实例清理完成。它仍有 lxml 分发材料阻塞，**也未执行干净 Windows 客体验收**。下面的 r3 套件只是旧候选的历史自测，不能沿用其报告或哈希。用户未安排重启前不运行 Sandbox；待材料门槛解除并确定最终 payload，再按本页重新生成与该 ZIP 指纹绑定的离线套件。
+2026-10-20 当前待验对象是重新构建的官方 Python 3.13.16 独立窗口候选 `refresh-20261020-r2`，运行 ZIP 为 38,160,897 字节（36.39 MiB）、SHA-256 `6a188384632f2715b53746de03f92f27bd93f4981c27673ee09440c5eee080f2`。其实际解压 EXE 的合成 PDF worker 四项和隔离 Windows WebView2 主流程 12 项通过；空闲退出后测试实例清理完成。它仍有 lxml 分发材料阻塞，**也未执行干净 Windows 客体验收**。已用 Windows 原生 Python 与合成素材生成绑定该 ZIP 哈希的离线套件 `.mediaslimx/clean-windows/09085b6749f14492a3cc585076b7fca9/`，其中 `results/NOT-RUN.json` 明确标为未运行；这只是准备工作，不是通过证据。下面的 r3 套件是旧候选的历史自测，不能沿用其报告或哈希。用户未安排重启前不运行 Sandbox；若后续更改 payload，须重新生成套件。
 
 The current standalone candidate uses official Python 3.13.16 and passed four isolated PDF-worker checks plus a 12-check native-window workflow on the development machine. Its lxml material gate and clean-Windows guest test remain open. The r3 kit below is historical; bind a fresh offline kit to the final archive after the user-controlled restart, without reusing its evidence.
 

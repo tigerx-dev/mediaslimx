@@ -1,6 +1,6 @@
 # MediaSlim X release notes draft (English)
 
-**Maintainer status: source code public; binary Release not published.** This is a future GitHub Release body, not a download announcement. The planned portable version is a local Windows standalone window. The latest local `official-python313-r1` candidate is a 36.36 MiB ZIP and passed an isolated native WebView2 synthetic-media flow; it is not a public download. Clean-Windows acceptance awaits a user-controlled restart. Exact lxml/iconv wheel provenance and LGPL relinking materials remain open. The old Python 3.12 bundle's libffi blocker does not carry over to the new official-Python candidate. Complete the gates and fill in the actual version, assets, sizes, date and scope before using the body. No binary release tag exists.
+**Maintainer status: source code public; binary Release not published.** This is a future GitHub Release body, not a download announcement. The planned portable version is a local Windows standalone window. The latest local `refresh-20261020-r2` candidate is a 36.39 MiB ZIP and passed an isolated native WebView2 synthetic-media flow; it is not a public download. The exact lxml/iconv wheel inputs are now traced; LGPL rebuild/relink material review and clean-Windows acceptance after a user-controlled restart remain open. The old Python 3.12 bundle's libffi blocker does not carry over to the new official-Python candidate. Complete the gates and fill in the actual version, assets, sizes, date and scope before using the body. No binary release tag exists.
 
 ---
 

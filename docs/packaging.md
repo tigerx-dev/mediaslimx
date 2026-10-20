@@ -10,11 +10,11 @@ Windows x64 `onedir` 包提供 Python、图片/PDF 引擎、FFmpeg 与 ffprobe�
 
 当前产物是 **本机验证候选，尚不可对外分发**。旧 `local-prototype` 保留，新包与之分开生成。构建会把来源材料状态、真实干净 Windows 验收、未解决项目和源码指纹写入 `BUILD-MANIFEST.json`；缺项时固定为 `LOCAL_VALIDATION_CANDIDATE_NOT_FOR_PUBLICATION`，不会因开发机测试通过而自动变成发行版。
 
-新候选清单有两条阻塞：确认 lxml Windows wheel 的实际静态 iconv 输入及 LGPL 重建/重链接材料；完成绑定同一 payload 的真实干净 Windows 验收。旧 r10 还保留其自身 libffi 来源阻塞，不把旧包的状态合并到新包。构建清单仍为 `LOCAL_VALIDATION_CANDIDATE_NOT_FOR_PUBLICATION`。
+新候选清单有两条阻塞：lxml 静态 iconv 的 LGPL 重建/重链接材料验收；完成绑定同一 payload 的真实干净 Windows 验收。lxml 准确 wheel 与上游构建输入的关联已另行核实，冻结清单尚保留此前的合并表述。旧 r10 还保留其自身 libffi 来源阻塞，不把旧包的状态合并到新包。构建清单仍为 `LOCAL_VALIDATION_CANDIDATE_NOT_FOR_PUBLICATION`。
 
 旧原型使用 WinGet 的 Gyan.FFmpeg `9.0-full_build-www.gyan.dev`，含大量本工具不使用的能力。新候选改用固定 FFmpeg 9.0.2 与 x264 源码自行构建的 Windows x64 精简引擎，仅保留普通 MP4 所需解复用、H.264 解码、libx264 编码、AAC 解码/复制、缩放和完整解码验证。源包、签名、构建配置、工具链版本、许可证、二进制指纹与原生 Windows 实测随单独的材料包保存，见 [精简引擎](ffmpeg-engine.md)。不将其宣传为通用 FFmpeg。
 
-便携包也包含 Python、Pillow、pikepdf/qpdf、lxml、Tcl/Tk、FastAPI 等第三方组件。新候选已收集固定版本 wheel、sdist、许可证和安装内容匹配证据，并将其 Python/libffi 与官方供应商文件核对；仍需复核 lxml wheel 与已收集静态 iconv 源码/重链接材料的实际对应。这项缺口记录在材料清单中，不能用一个总许可文件代替核实。MediaSlimX 自身 MIT 许可不替代组件各自条件，详见 [分发材料](distribution-materials.md)。
+便携包也包含 Python、Pillow、pikepdf/qpdf、lxml、Tcl/Tk、FastAPI 等第三方组件。新候选已收集固定版本 wheel、sdist、许可证和安装内容匹配证据，并将其 Python/libffi 与官方供应商文件核对；lxml wheel 的上游构建输入现已查明，仍需实测已收集源码能重建并重链接修改后的 LGPL iconv。这项缺口记录在材料清单中，不能用一个总许可文件代替核实。MediaSlimX 自身 MIT 许可不替代组件各自条件，详见 [分发材料](distribution-materials.md)。
 
 官方参考：[PyInstaller 运行时信息](https://pyinstaller.org/en/stable/runtime-information.html)、[PyInstaller 使用方式](https://pyinstaller.org/en/stable/operating-mode.html)、[FFmpeg 许可说明](https://ffmpeg.org/legal.html)。冻结后的 `sys.executable` 指向 EXE，不能当成 Python 解释器传入脚本；启用 GPL 组件会改变 FFmpeg 构建的许可条件。源码材料与验证状态应与实际二进制匹配，不以同名库的最新下载代替。
 
@@ -72,7 +72,7 @@ Windows x64 `onedir` 包提供 Python、图片/PDF 引擎、FFmpeg 与 ffprobe�
 
 浏览器r3历史文件：`.mediaslimx/packaging/MediaSlimX-windows-x64-validation-candidate-packaging-r3.zip`，SHA-256 `c631fdbc5fdba90576005ec1b653e85ddd428d60b9610f16aadef1fcc99395b9`；其同名 `-third-party-materials.zip` 仍与原包配套。各包完整分项分别见同目录各自的 `*-size-inventory.json`；已有产物不覆盖，仍为带待核实项目的本机候选。
 
-The current Windows x64 validation candidate is 36.39 MiB compressed and requires an installed WebView2 Runtime. Its extracted EXE passed four synthetic PDF-worker checks and a fresh 12-check isolated WebView2 scan/export/preview flow. An idle in-app exit stopped its private processes and ports. Exact lxml/iconv provenance and clean-Windows acceptance remain open. No public binary release has been made.
+The current Windows x64 validation candidate is 36.39 MiB compressed and requires an installed WebView2 Runtime. Its extracted EXE passed four synthetic PDF-worker checks and a fresh 12-check isolated WebView2 scan/export/preview flow. An idle in-app exit stopped its private processes and ports. The exact lxml wheel inputs are now traced; LGPL rebuild/relink and clean-Windows acceptance remain open. No public binary release has been made.
 
 ## 数据、端口与退出
 
@@ -139,7 +139,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\build-windows.ps1 `
 
 ### 当前独立窗口 refresh-20261020-r2
 
-当前源码与离线重编窗口助手生成的运行 ZIP、配套材料 ZIP 均位于忽略的 `.mediaslimx/packaging/refresh-20261020/`。构建清单标记 `LOCAL_VALIDATION_CANDIDATE_NOT_FOR_PUBLICATION`，仍列出 lxml 静态 iconv 来源/重链接材料、真实干净 Windows 验收两项阻塞。实际解压 EXE 的合成 PDF worker 四项通过；私有 Windows WebView2 12 项窗口流程通过，报告在 `.mediaslimx/window-tests/window 中文 space 0743e7273bb448548b036187b8b4d4f0/window-ui-report.json`。空闲退出后测试实例的自有进程和端口清零、工作目录为空。缺 Runtime、繁忙物理标题栏和干净系统尚未在该包上验证。
+当前源码与离线重编窗口助手生成的运行 ZIP、配套材料 ZIP 均位于忽略的 `.mediaslimx/packaging/refresh-20261020/`。构建清单标记 `LOCAL_VALIDATION_CANDIDATE_NOT_FOR_PUBLICATION`，仍列出 lxml 静态 iconv 来源/重链接材料、真实干净 Windows 验收两项阻塞；其中 wheel 来源后经上游构建日志核实，重链接材料仍未通过。实际解压 EXE 的合成 PDF worker 四项通过；私有 Windows WebView2 12 项窗口流程通过，报告在 `.mediaslimx/window-tests/window 中文 space 0743e7273bb448548b036187b8b4d4f0/window-ui-report.json`。空闲退出后测试实例的自有进程和端口清零、工作目录为空。缺 Runtime、繁忙物理标题栏和干净系统尚未在该包上验证。
 
 ### 前一版独立窗口 official-python313-r1
 

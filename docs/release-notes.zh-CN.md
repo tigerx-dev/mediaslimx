@@ -1,6 +1,6 @@
 # MediaSlim X 发布说明草稿（简体中文）
 
-**维护状态：源码已公开，二进制 Release 未发布。** 本文是未来 GitHub Release 的正文草稿，不是下载公告。拟提供 Windows 本地独立窗口便携版。最新本机候选 `official-python313-r1` 为 36.36 MiB ZIP，已验证实际解压 EXE 的合成媒体 WebView2 流程；不是正式下载。干净 Windows 验收待用户稍后手动重启，lxml/iconv 精确来源及 LGPL 重链接材料仍待核实；旧 r10 的 Python libffi 阻塞不再沿用到官方 Python 3.13 新候选。完成门槛后，填写与最终代码一致的版本、附件名、体积、日期和验证范围，再使用下方正文。尚未创建二进制发行 tag。
+**维护状态：源码已公开，二进制 Release 未发布。** 本文是未来 GitHub Release 的正文草稿，不是下载公告。拟提供 Windows 本地独立窗口便携版。最新本机候选 `refresh-20261020-r2` 为 36.39 MiB ZIP，已验证实际解压 EXE 的合成媒体 WebView2 流程；不是正式下载。lxml/iconv 的准确 wheel 输入已追溯，LGPL 重建/重链接材料仍待验收；干净 Windows 验收待用户方便时手动重启。旧 r10 的 Python libffi 阻塞不再沿用到官方 Python 3.13 新候选。完成门槛后，填写与最终代码一致的版本、附件名、体积、日期和验证范围，再使用下方正文。尚未创建二进制发行 tag。
 
 ---
 
