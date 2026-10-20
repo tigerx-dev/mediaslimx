@@ -48,15 +48,15 @@ A local image, video, and ordinary PDF batch optimizer for independent developer
 
 需要更新原目录时，主动选择备份覆盖。原件先按任务备份，结果验证后再替换；恢复前检查当前文件，发生冲突就跳过并提示。任务归档只整理列表，导入副本清理则单独列出占用与影响，不能把“清空列表”变成删除媒体。
 
-### 一套核心，区分运行环境
+### 一套核心，两种本地入口
 
-Python 核心配原生 HTML/CSS/JavaScript，无复杂前端构建或后台队列。首版重点是 Windows 独立窗口，同时保留本地浏览器入口；熟悉开发环境的用户也可在自己电脑的 WSL 中从源码使用。两种环境各自管理路径和任务数据。
+Python 核心配原生 HTML/CSS/JavaScript，无复杂前端构建或后台队列。首版重点是 Windows 独立窗口，同时保留 Windows 本地浏览器入口；两种入口共用处理核心，各自管理任务数据。
 
 目前公开的是源码。Windows 便携包仍需完成依赖材料核对和干净 Windows 验收，尚无可直接下载的安装或便携版本；本机候选包不作为案例下载入口。具体工程记录留在[发布指南](release-guide.md)，案例正文只说明用户实际可用的运行方式。
 
 ### 如实记录验证范围
 
-当前用独立合成素材验证真实扫描、导出、预览、报告、备份恢复、冲突、取消和空间清理。Windows 原生窗口与本机 WSL 均有测试记录；实体手机未验收。FIRANO 素材尚未提供，实际网站案例后续另行实测。
+当前用独立合成素材验证真实扫描、导出、预览、报告、备份恢复、冲突、取消和空间清理。Windows 原生窗口有实际测试记录；其他环境的技术验证见[平台状态](platforms.md)。FIRANO 素材尚未提供，实际网站案例后续另行实测。
 
 ## English case summary
 
@@ -64,7 +64,7 @@ MediaSlim X grew from a routine website-maintenance task: handling a mixed batch
 
 Export is the default. Users can explicitly choose backup-and-replace for folders on the service device; browser imports remain export-only. Restoration checks for later edits and skips conflicts. History archiving and import-copy cleanup are separate operations with different effects.
 
-One Python core serves a Chinese/English HTML/CSS/JavaScript interface. The first version focuses on the Windows standalone window and retains a local browser entry. Developers can also run the source locally in WSL on their own PC. Source code is public; the Windows portable package is still being prepared and is not yet available for download.
+One Python core serves a Chinese/English HTML/CSS/JavaScript interface. The first version focuses on the Windows standalone window and retains a local browser entry. Source code is public; the Windows portable package is still being prepared and is not yet available for download.
 
 This is a small, complete utility case: useful defaults, visible file outcomes, recovery paths and practical packaging. Demonstrations use synthetic media. There are no claimed customers, revenues, fixed savings or real FIRANO performance results.
 

@@ -37,26 +37,15 @@ MediaSlim X 是一个免费开源的本地批量压缩工具。扫描文件夹�
 
 若只想用浏览器界面，可运行 **`Start-MediaSlimX-Browser.cmd`**。它与独立窗口共用处理核心，但各自保存任务记录。不要直接打开 `mediaslimx/static/index.html`：界面需要本机服务。
 
-### 本机 WSL：源码试用
-
-如果项目文件位于自己电脑的 WSL，先在 WSL 中准备 Python 3.10+（处理 MP4 还需 FFmpeg、ffprobe），再运行 `./start-linux.sh`，用浏览器打开终端给出的本机地址。首次启动会建立独立的 `.venv`；路径和任务数据也与 Windows 分开，不能直接填入 Windows 路径。此入口供本机源码试用；首版仍以 Windows 独立窗口为主。
-
 ### 可选 PDF 支持
 
-基础依赖不包含 pikepdf。先完成一次源码启动，再在**正在使用的平台环境**中安装并重启工具：
-
-```bash
-# 本机 WSL
-.venv/bin/python -m pip install -r requirements-pdf.txt
-```
-
-Windows 在项目目录运行：
+基础依赖不包含 pikepdf。先完成一次源码启动，再在 Windows 虚拟环境中安装并重启工具：
 
 ```powershell
 .\.venv-win\Scripts\python.exe -m pip install -r requirements-pdf.txt
 ```
 
-缺少 PDF 依赖时，图片和视频仍可使用，PDF 会显示可操作的跳过原因。
+缺少 PDF 依赖时，图片和视频仍可使用，PDF 会显示可操作的跳过原因。其他开发环境的运行与依赖记录见[平台状态](docs/platforms.md)。
 
 ## 基本流程与数据边界
 
@@ -72,12 +61,6 @@ Windows 在项目目录运行：
 
 ## 验证、文档与许可
 
-Windows 源码窗口与本机 WSL 已用合成素材验证；macOS 与实体手机尚未完整验证。现有演示数字只来自合成素材，不代表实际网站收益。详细状态见[平台状态](docs/platforms.md)和[发布指南](docs/release-guide.md)。
+Windows 源码窗口已用合成素材验证；其他系统不在首版发行范围内。现有演示数字只来自合成素材，不代表实际网站收益。详细状态见[平台状态](docs/platforms.md)和[发布指南](docs/release-guide.md)。
 
-运行 Python 测试：
-
-```bash
-.venv/bin/python -m unittest discover -s tests
-```
-
-Windows 使用 `.venv-win\Scripts\python.exe -m unittest discover -s tests`。项目采用 [MIT License](LICENSE)；核心功能免费。问题反馈请勿附上含令牌、私人路径或敏感媒体的原始日志与截图。
+运行 Python 测试：`.venv-win\Scripts\python.exe -m unittest discover -s tests`。项目采用 [MIT License](LICENSE)；核心功能免费。问题反馈请勿附上含令牌、私人路径或敏感媒体的原始日志与截图。

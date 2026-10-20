@@ -37,26 +37,15 @@ See the [v1 specification](docs/v1-spec.md) for exact limits and skip reasons. I
 
 For the browser interface instead, run **`Start-MediaSlimX-Browser.cmd`**. It uses the same processing core but keeps its own task history. Do not open `mediaslimx/static/index.html` directly: the interface needs the local service.
 
-### Local WSL: source-based use
-
-If your project files are in WSL on your own PC, prepare Python 3.10+ there (and FFmpeg plus ffprobe for MP4), run `./start-linux.sh`, then open the local URL it prints. The first launch creates a separate `.venv`; paths and task data also stay separate from Windows, so Windows paths cannot be pasted into it. This is a local source-based option. The first version remains focused on the Windows standalone window.
-
 ### Optional PDF support
 
-The base requirements do not include pikepdf. After the first source launch, install it into the environment for the platform you are using, then restart the tool:
-
-```bash
-# Local WSL
-.venv/bin/python -m pip install -r requirements-pdf.txt
-```
-
-On Windows, run in the project folder:
+The base requirements do not include pikepdf. After the first source launch, install it into the Windows virtual environment, then restart the tool:
 
 ```powershell
 .\.venv-win\Scripts\python.exe -m pip install -r requirements-pdf.txt
 ```
 
-Without this dependency, images and videos still work; PDFs show an actionable skip reason.
+Without this dependency, images and videos still work; PDFs show an actionable skip reason. See [platform status](docs/platforms.md) for notes on other development environments.
 
 ## Workflow and data boundaries
 
@@ -72,12 +61,6 @@ The tool does not upload media to third parties or use accounts, telemetry or ex
 
 ## Validation, docs and license
 
-The Windows source window and local WSL have been tested with synthetic media. macOS and physical phones have not been fully verified. Demo savings come only from synthetic files, not a real website. See [platform status](docs/platforms.md) and the [release guide](docs/release-guide.md).
+The Windows source window has been tested with synthetic media; other operating systems are outside the first release scope. Demo savings come only from synthetic files, not a real website. See [platform status](docs/platforms.md) and the [release guide](docs/release-guide.md).
 
-Run Python tests:
-
-```bash
-.venv/bin/python -m unittest discover -s tests
-```
-
-On Windows use `.venv-win\Scripts\python.exe -m unittest discover -s tests`. Licensed under the [MIT License](LICENSE); all core features are free. When reporting issues, remove tokens, private paths and sensitive media from logs and screenshots.
+Run Python tests with `.venv-win\Scripts\python.exe -m unittest discover -s tests`. Licensed under the [MIT License](LICENSE); all core features are free. When reporting issues, remove tokens, private paths and sensitive media from logs and screenshots.
