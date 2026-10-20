@@ -133,6 +133,9 @@ def main() -> None:
         env = os.environ.copy()
         env["INCLUDE"] = ";".join(str(directory / "include") for directory in lib_dirs)
         env["LIBRARY"] = ";".join(str(directory / "lib") for directory in lib_dirs)
+        # --static supplies the archive names, while these macros prevent the
+        # headers from declaring libxml/libxslt functions as DLL imports.
+        env["CFLAGS"] = "/DLIBXML_STATIC /DLIBXSLT_STATIC /DLIBEXSLT_STATIC"
         env["WITHOUT_CYTHON"] = "true"
         subprocess.run([sys.executable, "-m", "pip", "install", "setuptools==84.0.0", "wheel==0.45.1"], check=True)
         subprocess.run([sys.executable, "setup.py", "bdist_wheel", "--static"], cwd=lxml, env=env, check=True)
