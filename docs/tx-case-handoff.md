@@ -27,7 +27,7 @@
 4. 对比：`assets/showcase/comparison.zh-CN.png`，注明仅在保留原件时提供前后预览。
 5. 视频：本地 40 秒中文初剪目前在被 Git 忽略的 `.mediaslimx/showcase/` 下；发布时更新片尾并重新核对后，再决定托管位置和真实链接。官网不能引用这个本机路径。
 
-这些画面使用独立合成素材。来源与测量见 `assets/showcase/manifest.json` 和 `assets/showcase/results.csv`；不加入 FIRANO 私有素材、个人任务记录、浏览器令牌或本机绝对路径。
+这些画面使用独立合成素材，工作台、结果和首图中的界面取自实际 WSL 浏览器测试，不是 Windows 独立窗口实拍；图中环境标识保持原样。Windows 启动画面另见 `assets/launch/startup/loading-zh-CN.png`，仅作为加载态辅助图。来源与测量见 `assets/showcase/manifest.json` 和 `assets/showcase/results.csv`；不加入 FIRANO 私有素材、个人任务记录、浏览器令牌或本机绝对路径。
 
 ## 发布后再填的入口
 

@@ -51,4 +51,4 @@ The portable build already includes Python and its media engines, so the cover d
 
 这些截图来自**受控延迟或失败的隔离测试**，是实际 Windows 窗口，不代表产品每次启动都会出现加载态或发生错误。TX 案例页首图与本启动状态素材是两类资产；建议仅把等待截图作为小型流程补图，勿替换案例主视觉、勿把错误态当成常规界面。图片无用户任务、FIRANO 素材或访问令牌。完整工作台画面应使用现有产品截图资产另行选取。
 
-**交接给 TX：**从项目目录复制 `assets/launch/startup/loading-zh-CN.png`（需要英文时配 `loading-en.png`），说明文字可用“Windows 独立窗口启动时，真实等待才显示本地工作台加载状态；就绪即进入。Linux/服务器仍使用网页。” 发布前按 TX 自己的素材策略决定放置位置；本轮没有修改 TX，也没有上传。
+**交接给 TX：**从项目目录复制 `assets/launch/startup/loading-zh-CN.png`（需要英文时配 `loading-en.png`），说明文字可用“Windows 独立窗口仅在实际等待时显示本地工作台加载状态；就绪后直接进入。” 发布前按 TX 自己的素材策略决定放置位置；本轮没有修改 TX，也没有上传。

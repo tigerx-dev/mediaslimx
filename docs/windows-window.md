@@ -1,10 +1,10 @@
 # Windows 独立窗口 / Windows standalone window
 
-Windows 窗口沿用现有 HTML/CSS/JavaScript 界面和 Python 媒体核心，用本机 WebView2 显示工具，不启动外部浏览器。Linux/WSL 服务器继续使用 `python -m mediaslimx` 与浏览器、SSH 隧道；这项接入不改变其部署方式。
+Windows 窗口沿用现有 HTML/CSS/JavaScript 界面和 Python 媒体核心，用本机 WebView2 显示工具，不启动外部浏览器。首版对外以 Windows 本地使用为主；其他环境的源码运行记录见[平台状态](platforms.md)，不作为首版发行承诺。
 
 源码窗口现有轻量双语启动遮罩：实际等待时显示、工作台数据就绪即进入、失败可重试或退出；Windows 原生实测、截图与 TX 素材交接见 [启动状态](startup-window.md)。本节历史 r7/r10 及便携包验收不自动涵盖该源码改动。
 
-The Windows window hosts the existing interface and Python processing core in WebView2. It does not launch an external browser. Linux/WSL keeps the existing local web service and SSH-tunnel workflow.
+The Windows window hosts the existing interface and Python processing core in WebView2. It does not launch an external browser. The first public version focuses on local Windows use; source-run notes for other environments are tracked in [platform status](platforms.md), not presented as a release promise.
 
 ## 使用与退出
 
