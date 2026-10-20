@@ -1,6 +1,6 @@
 # 开源发布准备 / Release preparation
 
-状态：**仅源码公开，暂无 Windows 便携包或其他二进制下载**。源码位于 [tigerx-dev/mediaslimx](https://github.com/tigerx-dev/mediaslimx)；本页其余便携包步骤是未来发行计划，不是当前可用下载。便携包仍需许可材料与干净 Windows 验收，本页不会触发系统重启。未来发布文案见 [中文草稿](release-notes.zh-CN.md) / [English draft](release-notes.en.md)；项目介绍见 [展示文案](showcase-copy.md)，给 TX 的本地案例内容见 [TX 官网案例交接稿](tx-case-handoff.md)。
+状态：**仅源码公开，暂无 Windows 便携包或其他二进制下载**。源码位于 [tigerx-dev/mediaslimx](https://github.com/tigerx-dev/mediaslimx)；本页其余便携包步骤是未来发行计划，不是当前可用下载。便携包仍需重生成并核对分发材料、完成干净 Windows 验收，本页不会触发系统重启。未来发布文案见 [中文草稿](release-notes.zh-CN.md) / [English draft](release-notes.en.md)；项目介绍见 [展示文案](showcase-copy.md)，给 TX 的本地案例内容见 [TX 官网案例交接稿](tx-case-handoff.md)。
 
 ## 下载与托管怎么安排
 
@@ -41,7 +41,7 @@ Windows standalone-window source is implemented; its own service drains safely o
 截至 2026-10-20，当前 `refresh-20261020-r2` 窗口候选仍为 `LOCAL_VALIDATION_CANDIDATE_NOT_FOR_PUBLICATION`，ZIP 为 38,160,897 字节（36.39 MiB），并非下载发行版。它已随当前源码重建，实际解压 EXE 的合成 PDF worker 四项、隔离 Windows WebView2 主流程 12 项通过，空闲退出后自有进程和端口清理。旧候选独立保留；其证据不转记到新包。现有服务和其他项目不受测试影响；用户计划稍后手动重启，本阶段不重启。
 
 1. **真实干净 Windows 验收**：当前候选的本机隔离 WebView2 流程已覆盖 201 文件目录扫描、导出、五格式结果、CSV、预览和空闲退出；尚未验证繁忙物理标题栏退出。Sandbox 已启用，但 Windows 需用户方便时手动重启，尚未运行客体。最终套件必须绑定最终 payload，覆盖普通账户、有/无 Runtime、离线及处理关窗。本机隔离测试不能代替干净环境。
-2. **lxml 静态 iconv 的重建/重链接材料**：准确 wheel 的 SHA-256 已与上游 6.1.3-1 Release 匹配，Windows cp313 构建日志明确使用 2026.05.17 的 iconv 等静态库。仍需验证随包提供的对应源码和构建步骤可让用户修改 LGPL iconv 后重建并重链接扩展；详见[分发材料](distribution-materials.md)。
+2. **最终 lxml/iconv 材料与候选包绑定**：准确 wheel 的 SHA-256 已与上游 6.1.3-1 Release 匹配；[公开 Windows 构建检查](https://github.com/tigerx-dev/mediaslimx/actions/runs/39452293147)已从固定源码重建 iconv、替换静态库并重建、导入 lxml。当前候选包及冻结材料清单仍保留检查前的阻塞，须把可重复的配方、来源和通知纳入最终材料包，重生成并核对附件；详见[分发材料](distribution-materials.md)。
 
 旧 r10 的 Python 3.12 libffi 来源仍不明，因此旧包也不能发行。新候选改用 CPython 官方 3.13.16 NuGet 与 Python.org 对应 ZIP/SPDX，实际 libffi DLL 与官方 `cpython-bin-deps` 匹配，材料清单仅剩 lxml 项；不能把新候选的结论倒推给旧包。
 
@@ -49,7 +49,7 @@ Windows standalone-window source is implemented; its own service drains safely o
 
 材料的准确状态以 [分发材料](distribution-materials.md) 为准；干净环境进度见 [clean-windows.md](clean-windows.md)，完整测试范围见 [platforms.md](platforms.md)。当前未签名，不宣称通过 SmartScreen。若核实导致依赖或构建变化，应生成新候选，按实际受影响范围重测并重新绑定验收证据。
 
-The current Windows candidate was rebuilt from the latest source and passed four synthetic PDF-worker checks plus a fresh 12-check isolated native-window flow. Exact lxml wheel inputs are traced, while LGPL rebuild/relink materials and clean-Windows acceptance after a user-controlled restart remain open. Developer-machine tests do not replace clean-Windows acceptance.
+The current Windows candidate passed four synthetic PDF-worker checks plus a fresh 12-check isolated native-window flow. A public Windows CI run also verified an iconv rebuild and lxml relink, but the final materials and candidate must be regenerated and checked. Clean-Windows acceptance remains pending a user-controlled restart. Developer-machine tests do not replace that acceptance.
 
 ## 建议的首发版本与文件
 

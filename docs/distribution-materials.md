@@ -25,7 +25,7 @@ Python itself and its native libraries are not represented by pip metadata. Thei
 | Python / PyInstaller | 当前新候选采用官方 CPython 3.13.16；旧 r10 是来源不同的 3.12.14。PyInstaller 6.16.0 的许可证、bootloader 源分发及准确 wheel 均收集 |
 | 图片 | Pillow 12.3.0 的 wheel、源分发和完整合并许可证，包含 JPEG/WebP/AVIF/TIFF/FreeType 等所带库的说明；包含某编码库不代表界面支持该媒体格式 |
 | PDF | pikepdf 10.17.0（MPL-2.0）、qpdf 12.4.2；保存 pikepdf 精确 sdists、qpdf 源归档与 wheel 自带第三方库许可映射 |
-| XML | lxml 6.1.3；实际 libxml2 2.11.9、libxslt 1.1.45。已将准确 wheel 对应到上游构建记录和静态库输入；LGPL 重建/重链接材料验收仍待完成 |
+| XML | lxml 6.1.3；实际 libxml2 2.11.9、libxslt 1.1.45。准确 wheel 已对应上游构建记录；公开 Windows CI 已用固定源码重建 iconv、替换静态库并重新构建、导入 lxml。最终材料包与候选包仍待重生成和核对 |
 | Python 外部库 | 新候选实测 OpenSSL 3.5.9、SQLite 3.50.4、Tcl/Tk 8.6.15、libffi 3.4.4；保存相应源归档、源许可证及官方供应商材料。旧 r10 数值另见历史候选清单 |
 | Web/Python 组件 | FastAPI、Starlette、Uvicorn、Pydantic/pydantic-core、AnyIO、Click 等逐项版本和完整许可证；PyInstaller 实际引入 setuptools 84.0.0 及其 vendored 代码，也保留相应许可，准确清单以生成的 manifest 为准 |
 | 视频 | 使用本项目精简 FFmpeg/x264 材料目录；详见 [FFmpeg 引擎](ffmpeg-engine.md) |
@@ -34,16 +34,16 @@ Pillow 的完整合并许可证和额外声明随包提供，保留 Independent 
 
 ## 明确保留的待核实项
 
-下面第 1 项仍适用于新候选；第 2 项仅说明旧 r10 的历史阻塞，新候选已由官方 Python 输入解除此项。
+下面第 1 项仍适用于**已冻结的**新候选材料清单；技术性重链接试验已通过，但该旧清单和候选包尚未重生成。第 2 项仅说明旧 r10 的历史阻塞，新候选已由官方 Python 输入解除此项。
 
-1. **lxml 静态 iconv 的 LGPL 重建/重链接材料验收。** Windows wheel 的许可证说明列出 iconv 为 LGPL 2.1；实测 libxml2 的头文件启用 iconv，`.pyd` 含相关符号。现已将 PyPI wheel SHA-256 `e477aca0bc0d19f3b4ae9e4f2a1cfd687c31bf772d78734910658186b40b2477` 与 [上游 6.1.3-1 Release 的同名 wheel](https://github.com/lxml/lxml/releases/tag/lxml-6.1.3-1) 逐字节哈希匹配，并定位 [该 Release 的构建运行](https://github.com/lxml/lxml/actions/runs/33619264082)；[Windows x64 的 Python 3.13 构建任务](https://github.com/lxml/lxml/actions/runs/33619264082/job/100212452171)日志明确使用 2026.05.17 的 libxml2 2.11.9、libxslt 1.1.45、zlib 1.3.2 和 iconv 1.17.1 静态库，`link.exe` 命令含 `iconv_a.lib`。对应库的 [预取任务](https://github.com/lxml/lxml/actions/runs/33619264082/job/100212324598)亦记录了准确下载 URL。已保存该标签、四份静态库/头文件 ZIP、gitlink 指向的完整源提交及 MSVC 项目；2026.10.05 的库发布晚于 wheel，只保留作历史审计。**轮子来源已核实，重建/重链接材料能否充分满足 LGPL 2.1 第 6 条仍待验证**，现有候选仍不可公开分发。
+1. **lxml 静态 iconv 的材料封装。** Windows wheel 的许可证说明列出 iconv 为 LGPL 2.1；实测 libxml2 的头文件启用 iconv，`.pyd` 含相关符号。PyPI wheel SHA-256 `e477aca0bc0d19f3b4ae9e4f2a1cfd687c31bf772d78734910658186b40b2477` 已与 [上游 6.1.3-1 Release 的同名 wheel](https://github.com/lxml/lxml/releases/tag/lxml-6.1.3-1) 逐字节哈希匹配。[上游 Windows x64 Python 3.13 构建任务](https://github.com/lxml/lxml/actions/runs/33619264082/job/100212452171)确认使用 2026.05.17 的 libxml2 2.11.9、libxslt 1.1.45、zlib 1.3.2 和 iconv 1.17.1 静态库；[预取任务](https://github.com/lxml/lxml/actions/runs/33619264082/job/100212324598)给出准确下载 URL。已保存对应标签、库与源提交。进一步的[公开 Windows 重链接检查](https://github.com/tigerx-dev/mediaslimx/actions/runs/39452293147)成功从固定源码重建 `iconv_a.lib`，替换上游静态库，再从 lxml 6.1.3 源码构建 Windows cp313 wheel 并成功导入、解析 XML；该检查不产出发行附件。**旧候选材料清单与包仍含先前阻塞，须重生成并核对对应源码、步骤和通知后才能发行。**该技术验证不构成法律意见。
 2. **构建解释器的 libffi 具体来源及适用通知。** 当前便携候选实际取自 Codex 本机缓存的 Python 3.12.14。其 `libffi-8.dll` 没有可用 PE 版本字段，SHA-256 为 `adf7d8e3413209755f75a7c69cec9e5eac84a1a6f1c8b60c22cd15e2f1732380`。[CPython 3.12.14 Windows 配方](https://github.com/python/cpython/blob/v3.12.14/PCbuild/get_externals.bat)指定 libffi 3.4.4，但官方 `cpython-bin-deps/libffi-3.4.4/amd64/libffi-8.dll` 的 SHA-256 实测为 `eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a`，与候选不符，因此不能直接归为该官方二进制。保留候选 DLL 指纹和 CPython 文档中的 libffi 许可，仍需确认它的实际来源及适用通知。其余已收集部分：Python 原供应商 LICENSE 本身包含 Microsoft Distributable Code 条件与 Tcl/Tk 完整许可；微软运行库实测 14.44.35211.0，OpenSSL 3.5.8 原许可从其精确源归档保存。当前解释器的外部库版本与 CPython 默认配方不同，不能靠默认配方推定实际供应链。
 
-The lxml material gap remains an explicit `release_blocker` in the frozen material/build manifests; that entry predates the wheel-provenance finding above. The old r10 manifest retains its separate libffi blocker. Neither candidate is ready to publish. No claim of legal certification is made.
+The frozen material/build manifests still list the lxml `release_blocker`. A public Windows CI run has now rebuilt iconv, replaced the archive, rebuilt lxml and imported the result; regenerate and review the final materials and candidate rather than editing frozen manifests. The old r10 manifest retains its separate libffi blocker. Neither candidate is ready to publish. No claim of legal certification is made.
 
-下一步只剩核对随材料包提供的对应源、修改、构建步骤与可重链接材料，实际尝试用修改后的 iconv 重新构建 lxml 扩展；当前主机没有 Windows C++ 构建工具，尚未执行这个试验。源归档含 `src/lxml/etree.c`、`setup.py` 与 winlibs 的 `MSVC17/libiconv_static` 项目，预编译 ZIP 含 `iconv_a.lib`，但文件存在不等于重链接已验证。完成后重生成材料清单与候选包，避免旧清单错误地仍称 wheel 来源未核实。以上是发行证据门槛，不替代法律意见。
+下一步将已通过的公开重链接配方与来源、许可证通知纳入最终材料包，重生成材料清单和候选包，并核对实际附件与源码提交一致。当前主机没有 Windows C++ 构建工具；上述试验是在 GitHub 托管 Windows 构建机运行，不能写成本机干净 Windows 验收。以上是发行证据门槛，不替代法律意见。
 
-The exact PyPI wheel now matches the upstream GitHub Release asset, and its Windows build log identifies the 2026.05.17 static-library inputs. The remaining gate is a practical check of the corresponding source, modifications, build instructions and ability to rebuild/relink with a modified LGPL iconv. The current host lacks Windows C++ build tools. Regenerate the materials manifest and candidate after closing that gate; do not silently edit frozen manifests. This is an evidence gate, not legal advice.
+The exact PyPI wheel matches the upstream GitHub Release asset. A public Windows CI run verified rebuilding iconv from pinned source, replacing its static archive and rebuilding/importing lxml. The current host lacks Windows C++ build tools; the CI result is distinct from clean-Windows acceptance. Regenerate and review the final materials manifest and candidate; do not silently edit frozen manifests. This is an evidence gate, not legal advice.
 
 ## 官方 Python 3.13.16 窗口候选（已构建，本机验证中）
 
