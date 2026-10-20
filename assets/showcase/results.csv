@@ -1,0 +1,7 @@
+﻿relative_path,type,original_bytes,result_bytes,saved_percent,status,reason,seconds,parameters
+videos/intro.mp4,video,531270,306698,42.27,success,,1.152,"{""encoder"": ""libx264"", ""crf"": 23, ""encoder_preset"": ""medium"", ""audio"": ""copy"", ""size"": [1280, 800], ""preset"": ""balanced""}"
+galleries/card.png,image,26228,25474,2.87,success,,0.169,"{""encoder"": ""Pillow"", ""quality"": ""lossless"", ""size"": [1440, 960], ""preset"": ""balanced""}"
+galleries/detail.jpg,image,107521,41845,61.08,success,,0.055,"{""encoder"": ""Pillow"", ""quality"": 82, ""size"": [1600, 1000], ""preset"": ""balanced""}"
+galleries/studio.webp,image,26358,17690,32.89,success,,0.122,"{""encoder"": ""Pillow"", ""quality"": 82, ""size"": [1600, 1000], ""preset"": ""balanced""}"
+website/hero.jpg,image,197652,73514,62.81,success,,0.078,"{""encoder"": ""Pillow"", ""quality"": 82, ""size"": [2400, 1500], ""preset"": ""balanced""}"
+downloads/guide.pdf,document,718,718,0.0,no_gain,压缩无收益，保留原文件,0.941,"{""encoder"": ""pikepdf/qpdf"", ""version"": ""10.13.0.post1"", ""quality"": ""lossless structure"", ""compress_streams"": true, ""recompress_flate"": true, ""object_streams"": ""preserve"", ""page_resize"": false, ""image_reencoding"": false, ""validation"": ""page boxes and ordered content hashes; embedded stream hashes; not rendering equivalence""}"

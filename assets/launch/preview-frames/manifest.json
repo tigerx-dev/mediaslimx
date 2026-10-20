@@ -1,0 +1,141 @@
+{
+  "kind": "MediaSlim X six-frame video approval preview",
+  "status": "static storyboard draft; not a rendered video; not approved for publication",
+  "language": "zh-CN",
+  "duration_seconds": 40,
+  "renderer": "scripts/render-video-preview.cjs",
+  "design": "DESIGN.md",
+  "synthetic_media": true,
+  "capture_platform": "WSL Linux / Chrome",
+  "actual_interface": "Local Python service and browser workbench; no native desktop wrapper",
+  "raw_source": {
+    "private_capture": true,
+    "sha256": "c45cd29b6f19d9b266dc148caaf0feccb03fbfb04209189d6a26bbac0ea8cba2"
+  },
+  "extracted_frames": [
+    {
+      "file": "assets/launch/preview-frames/source-plan.png",
+      "raw_capture_sha256": "c45cd29b6f19d9b266dc148caaf0feccb03fbfb04209189d6a26bbac0ea8cba2",
+      "at_seconds": 11.8,
+      "sha256": "4c766b45bc1588fd2837194aac3308ff0f40d1dd2c6a14d71e33fe0dd5894d85",
+      "purpose": "actual processing-plan dialog"
+    },
+    {
+      "file": "assets/launch/preview-frames/source-progress.png",
+      "raw_capture_sha256": "c45cd29b6f19d9b266dc148caaf0feccb03fbfb04209189d6a26bbac0ea8cba2",
+      "at_seconds": 17.5,
+      "sha256": "ec8d94cd413cab5fceafd3fa4faccc7e792534b448f719b39dbc01ca08043601",
+      "purpose": "actual processing progress"
+    }
+  ],
+  "frames": [
+    {
+      "id": "01",
+      "timeline_seconds": [
+        0,
+        4
+      ],
+      "file": "assets/launch/preview-frames/frame-01.png",
+      "source": "assets/launch/preview-frames/frame-01.html",
+      "width": 1920,
+      "height": 1080,
+      "title": "批量压缩工具",
+      "image_source": "assets/showcase/workbench.zh-CN.png",
+      "image_sha256": "6739b4bfd199e6394abc4d7ec88965524ac83dc1dc01a6be75f06e8d194c0208",
+      "sha256": "f584b6faf201ea200ed6fbfd4c2928211cbff8acabdb60b392e86170c929360a",
+      "screenshot_content_edited": false,
+      "minimum_text_px": 18,
+      "external_requests": 0
+    },
+    {
+      "id": "02",
+      "timeline_seconds": [
+        4,
+        11
+      ],
+      "file": "assets/launch/preview-frames/frame-02.png",
+      "source": "assets/launch/preview-frames/frame-02.html",
+      "width": 1920,
+      "height": 1080,
+      "title": "选择目录 按类型勾选",
+      "image_source": "assets/showcase/workbench.zh-CN.png",
+      "image_sha256": "6739b4bfd199e6394abc4d7ec88965524ac83dc1dc01a6be75f06e8d194c0208",
+      "sha256": "2e26a673fb2cfc431b2e20b72e579bfed6e23b4d6ab1532b8656087b2ed1851d",
+      "screenshot_content_edited": false,
+      "minimum_text_px": 18,
+      "external_requests": 0
+    },
+    {
+      "id": "03",
+      "timeline_seconds": [
+        11,
+        18
+      ],
+      "file": "assets/launch/preview-frames/frame-03.png",
+      "source": "assets/launch/preview-frames/frame-03.html",
+      "width": 1920,
+      "height": 1080,
+      "title": "开始前 看清如何处理",
+      "image_source": "assets/launch/preview-frames/source-plan.png",
+      "image_sha256": "4c766b45bc1588fd2837194aac3308ff0f40d1dd2c6a14d71e33fe0dd5894d85",
+      "sha256": "7c18524cedfb51e4fad137237ac6a6d08b11eb57d66dac259cbd6d6a55f9b5cf",
+      "screenshot_content_edited": false,
+      "minimum_text_px": 18,
+      "external_requests": 0
+    },
+    {
+      "id": "04",
+      "timeline_seconds": [
+        18,
+        25
+      ],
+      "file": "assets/launch/preview-frames/frame-04.png",
+      "source": "assets/launch/preview-frames/frame-04.html",
+      "width": 1920,
+      "height": 1080,
+      "title": "逐文件处理 随时取消剩余",
+      "image_source": "assets/launch/preview-frames/source-progress.png",
+      "image_sha256": "ec8d94cd413cab5fceafd3fa4faccc7e792534b448f719b39dbc01ca08043601",
+      "sha256": "494dd6a3f352751ada3fa1a69bc0f7475c5b049bbec31b1118bbb874fc421f44",
+      "screenshot_content_edited": false,
+      "minimum_text_px": 18,
+      "external_requests": 0
+    },
+    {
+      "id": "05",
+      "timeline_seconds": [
+        25,
+        33
+      ],
+      "file": "assets/launch/preview-frames/frame-05.png",
+      "source": "assets/launch/preview-frames/frame-05.html",
+      "width": 1920,
+      "height": 1080,
+      "title": "检查实际结果",
+      "image_source": "assets/showcase/comparison.zh-CN.png",
+      "image_sha256": "8bbf2b2729668fac1b734efd7697b9d0eea6b15211f04ec64f995e331767713d",
+      "sha256": "f95fd01d07269eef73a154ec9d918f1d864d7aa033e9a3dac804677b5869a787",
+      "screenshot_content_edited": false,
+      "minimum_text_px": 18,
+      "external_requests": 0
+    },
+    {
+      "id": "06",
+      "timeline_seconds": [
+        33,
+        40
+      ],
+      "file": "assets/launch/preview-frames/frame-06.png",
+      "source": "assets/launch/preview-frames/frame-06.html",
+      "width": 1920,
+      "height": 1080,
+      "title": "免费开源 本地处理",
+      "image_source": null,
+      "image_sha256": null,
+      "sha256": "3ca9991d1da7f3400986ab0551c3a1047145a6017cab5aa8c943821eb3f0108d",
+      "screenshot_content_edited": false,
+      "minimum_text_px": 18,
+      "external_requests": 0
+    }
+  ]
+}

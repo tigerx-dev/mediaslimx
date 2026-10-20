@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">MediaSlim X — 图片 · MP4 · PDF 批量压缩工具</title>
+<desc id="desc">Free and open-source local media optimization. Graphite and mint cover with the author's right-facing TX X mark.</desc>
+<rect width="1200" height="630" fill="#15181D"/>
+<rect x="800" width="400" height="630" fill="#B4EDC6"/>
+<g font-family="Segoe UI, Noto Sans CJK SC, Microsoft YaHei, sans-serif">
+<g fill="#B4EDC6" transform="translate(64 55) scale(.5)"><path transform="translate(4 5) scale(.254545 .257143) translate(-200 0)" d="M200,0L280,105L200,210L260,210L340,105L260,0L200,0Z"/><path transform="translate(4 5) scale(.254545 .257143) translate(-200 0)" fill-rule="evenodd" d="M352.5,88.59375L420,0L360,0L322.5,49.21875L352.5,88.59375Z M352.5,121.40625L420,210L360,210L322.5,160.78125L352.5,121.40625Z M292.5,121.40625L280,105L292.5,88.59375L305,105L292.5,121.40625Z"/></g>
+<text x="108" y="79" fill="#A0AAB7" font-size="16" letter-spacing="2">MEDIA WORKBENCH</text>
+<text x="64" y="246" fill="#EDF1F5" font-size="82" font-weight="600" letter-spacing="-3">MediaSlim <tspan fill="#B4EDC6">X</tspan></text>
+<text x="66" y="329" fill="#EDF1F5" font-size="42" font-weight="500">图片 · MP4 · PDF</text>
+<text x="66" y="383" fill="#A0AAB7" font-size="24">批量压缩工具 · 本地处理</text>
+<path d="M66 511H734" stroke="#333C47"/>
+<text x="66" y="554" fill="#A0AAB7" font-size="18">Free &amp; open source</text>
+<text x="734" y="554" fill="#A0AAB7" font-size="18" text-anchor="end">Local processing</text>
+</g>
+<g fill="#14271B" transform="translate(840 155) scale(5)"><path transform="translate(4 5) scale(.254545 .257143) translate(-200 0)" d="M200,0L280,105L200,210L260,210L340,105L260,0L200,0Z"/><path transform="translate(4 5) scale(.254545 .257143) translate(-200 0)" fill-rule="evenodd" d="M352.5,88.59375L420,0L360,0L322.5,49.21875L352.5,88.59375Z M352.5,121.40625L420,210L360,210L322.5,160.78125L352.5,121.40625Z M292.5,121.40625L280,105L292.5,88.59375L305,105L292.5,121.40625Z"/></g>
+<path d="M840 515H1160" stroke="#246C48" stroke-opacity=".35"/>
+<text x="1000" y="554" text-anchor="middle" fill="#14271B" font-family="Segoe UI, Arial, sans-serif" font-size="16" letter-spacing="2">LESS TO CARRY</text>
+</svg>

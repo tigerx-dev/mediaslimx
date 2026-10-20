@@ -1,0 +1,248 @@
+{
+  "synthetic": true,
+  "description": {
+    "zh-CN": "全部为自行生成的合成演示素材；截图来自真实扫描和导出任务，不代表真实网站收益。",
+    "en": "All media is self-generated synthetic demo material. Screenshots show a real scan and export task, not real website savings."
+  },
+  "platform": "WSL Linux; Chrome headless viewport capture",
+  "viewport": {
+    "width": 1600,
+    "height": 1000
+  },
+  "mode": "export",
+  "preset": "balanced",
+  "resize": "original dimensions",
+  "originals_unchanged": true,
+  "third_party_browser_requests": 0,
+  "page_errors": [],
+  "original_bytes": 889747,
+  "result_bytes": 465939,
+  "files": [
+    {
+      "relative": "downloads/guide.pdf",
+      "format": "PDF",
+      "status": "no_gain",
+      "original_bytes": 718,
+      "result_bytes": 718,
+      "saved_bytes": 0,
+      "original_sha256": "0d7ab4b168c45259291360434351456b177faed59d8ca71de1ef50d1976a32be",
+      "result_sha256": "0d7ab4b168c45259291360434351456b177faed59d8ca71de1ef50d1976a32be",
+      "original_info": {
+        "kind": "document",
+        "format": "PDF",
+        "pages": 1,
+        "pdf_version": "1.3",
+        "objects": 5,
+        "streams": 1,
+        "decoded_bytes": 125,
+        "page_digest": "a2fee5d448ec5289db03c9e932fb4777519958a0c40b462470a5889bfd311155",
+        "stream_digest": "d54f009be784d920e5f5a459363ce8ec3d2e94af2b466618be5c375763accca3",
+        "validation": "page boxes and ordered content hashes; embedded stream hashes; not rendering equivalence"
+      },
+      "result_info": {
+        "kind": "document",
+        "format": "PDF",
+        "pages": 1,
+        "pdf_version": "1.3",
+        "objects": 5,
+        "streams": 1,
+        "decoded_bytes": 125,
+        "page_digest": "a2fee5d448ec5289db03c9e932fb4777519958a0c40b462470a5889bfd311155",
+        "stream_digest": "d54f009be784d920e5f5a459363ce8ec3d2e94af2b466618be5c375763accca3",
+        "validation": "page boxes and ordered content hashes; embedded stream hashes; not rendering equivalence"
+      },
+      "actual_parameters": {
+        "encoder": "pikepdf/qpdf",
+        "version": "10.13.0.post1",
+        "quality": "lossless structure",
+        "compress_streams": true,
+        "recompress_flate": true,
+        "object_streams": "preserve",
+        "page_resize": false,
+        "image_reencoding": false,
+        "validation": "page boxes and ordered content hashes; embedded stream hashes; not rendering equivalence"
+      }
+    },
+    {
+      "relative": "galleries/card.png",
+      "format": "PNG",
+      "status": "success",
+      "original_bytes": 26228,
+      "result_bytes": 25474,
+      "saved_bytes": 754,
+      "original_sha256": "982ad45e132e45f315b9b5c59cf290036f4d7475e65d505a0bc146f4bbcdfc27",
+      "result_sha256": "7ac72e60c248acebb29cc9f9282c95ce25bef9e18be16475353c1b62b8432cdf",
+      "original_info": {
+        "kind": "image",
+        "format": "PNG",
+        "width": 1440,
+        "height": 960,
+        "mode": "RGBA"
+      },
+      "result_info": {
+        "kind": "image",
+        "format": "PNG",
+        "width": 1440,
+        "height": 960,
+        "mode": "RGBA"
+      },
+      "actual_parameters": {
+        "encoder": "Pillow",
+        "quality": "lossless",
+        "size": [
+          1440,
+          960
+        ],
+        "preset": "balanced"
+      }
+    },
+    {
+      "relative": "galleries/detail.jpg",
+      "format": "JPEG",
+      "status": "success",
+      "original_bytes": 107521,
+      "result_bytes": 41845,
+      "saved_bytes": 65676,
+      "original_sha256": "6548ff45838217f0831b5c52219a0c87f5485a36896e0f62fa2c0fc8087c7935",
+      "result_sha256": "b4166a2687f816b69bf57b8ca237892152ec6d5c5439e9c7deb0d57691132cbc",
+      "original_info": {
+        "kind": "image",
+        "format": "JPEG",
+        "width": 1600,
+        "height": 1000,
+        "mode": "RGB"
+      },
+      "result_info": {
+        "kind": "image",
+        "format": "JPEG",
+        "width": 1600,
+        "height": 1000,
+        "mode": "RGB"
+      },
+      "actual_parameters": {
+        "encoder": "Pillow",
+        "quality": 82,
+        "size": [
+          1600,
+          1000
+        ],
+        "preset": "balanced"
+      }
+    },
+    {
+      "relative": "galleries/studio.webp",
+      "format": "WEBP",
+      "status": "success",
+      "original_bytes": 26358,
+      "result_bytes": 17690,
+      "saved_bytes": 8668,
+      "original_sha256": "d397b29714bb022ffc84c06156e4f0cd8ffd541b6f2730125b020454ad43ed6a",
+      "result_sha256": "998c314a5cdc7cf30f913260e491e25af47ab079c01f47500b33c17b8c9aa3d8",
+      "original_info": {
+        "kind": "image",
+        "format": "WEBP",
+        "width": 1600,
+        "height": 1000,
+        "mode": "RGB"
+      },
+      "result_info": {
+        "kind": "image",
+        "format": "WEBP",
+        "width": 1600,
+        "height": 1000,
+        "mode": "RGB"
+      },
+      "actual_parameters": {
+        "encoder": "Pillow",
+        "quality": 82,
+        "size": [
+          1600,
+          1000
+        ],
+        "preset": "balanced"
+      }
+    },
+    {
+      "relative": "videos/intro.mp4",
+      "format": "MP4",
+      "status": "success",
+      "original_bytes": 531270,
+      "result_bytes": 306698,
+      "saved_bytes": 224572,
+      "original_sha256": "004a69df74d5ab323e07a216d6b895b2b5aff5c6017c33185bdb7aa26ea56a02",
+      "result_sha256": "9a2c5614e9d3484f7a4664976fc98e8e60b5ed650357e70f96b325098c7aa049",
+      "original_info": {
+        "kind": "video",
+        "format": "MP4",
+        "width": 1280,
+        "height": 800,
+        "duration": 8,
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "audio": "无",
+        "audio_channels": 0,
+        "fps": 25
+      },
+      "result_info": {
+        "kind": "video",
+        "format": "MP4",
+        "width": 1280,
+        "height": 800,
+        "duration": 8,
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "audio": "无",
+        "audio_channels": 0,
+        "fps": 25
+      },
+      "actual_parameters": {
+        "encoder": "libx264",
+        "crf": 23,
+        "encoder_preset": "medium",
+        "audio": "copy",
+        "size": [
+          1280,
+          800
+        ],
+        "preset": "balanced"
+      }
+    },
+    {
+      "relative": "website/hero.jpg",
+      "format": "JPEG",
+      "status": "success",
+      "original_bytes": 197652,
+      "result_bytes": 73514,
+      "saved_bytes": 124138,
+      "original_sha256": "8fba72d049947fc5d2062d439a75854447d0de49b87cc3912250cf9d302f40c4",
+      "result_sha256": "99faf5a923b3f6ee69b9b74b32fb4d7a879e8482a8fed557d8728b7f5fa42edd",
+      "original_info": {
+        "kind": "image",
+        "format": "JPEG",
+        "width": 2400,
+        "height": 1500,
+        "mode": "RGB"
+      },
+      "result_info": {
+        "kind": "image",
+        "format": "JPEG",
+        "width": 2400,
+        "height": 1500,
+        "mode": "RGB"
+      },
+      "actual_parameters": {
+        "encoder": "Pillow",
+        "quality": 82,
+        "size": [
+          2400,
+          1500
+        ],
+        "preset": "balanced"
+      }
+    }
+  ],
+  "capture_script": "scripts/capture-showcase.cjs",
+  "fixture_script": "scripts/showcase-fixtures.py",
+  "saved_bytes": 423808,
+  "saved_percent": 47.63
+}

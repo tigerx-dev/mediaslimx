@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediaSlim X · 启动封面静态预览</title>
+  <style>
+    :root { font-family: "Segoe UI Variable", "Segoe UI", "Microsoft YaHei UI", sans-serif; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-width: 900px; min-height: 600px; }
+    body {
+      --bg: #15181d;
+      --surface: #1d2229;
+      --text: #edf1f5;
+      --muted: #a0aab7;
+      --quiet: #7d8897;
+      --border: #333c47;
+      --mint: #b4edc6;
+      --glow: rgba(180, 237, 198, .065);
+      background: var(--bg);
+      color: var(--text);
+    }
+    body.light {
+      --bg: #edf1f4;
+      --surface: #fff;
+      --text: #24303a;
+      --muted: #586674;
+      --quiet: #667481;
+      --border: #cbd5dd;
+      --mint: #246c48;
+      --glow: rgba(36, 108, 72, .055);
+    }
+    .stage {
+      width: 100vw;
+      height: 100vh;
+      min-height: 600px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      width: 720px;
+      height: 540px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--glow), transparent 68%);
+      z-index: -1;
+    }
+    .language {
+      position: absolute;
+      top: 34px;
+      right: 48px;
+      min-width: 48px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .panel {
+      width: min(650px, calc(100vw - 140px));
+      min-height: 350px;
+      padding: 48px 46px 43px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--surface);
+      box-shadow: 0 22px 70px rgba(0, 0, 0, .16);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .light .panel { box-shadow: 0 22px 60px rgba(36, 48, 58, .08); }
+    .eyebrow {
+      color: var(--mint);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      line-height: 1.6;
+    }
+    .wordmark {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 26px;
+      font-size: 53px;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -.045em;
+      white-space: nowrap;
+    }
+    .product-x {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      flex: none;
+    }
+    .purpose {
+      margin: 20px 0 0;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .activity { margin-top: 51px; width: 180px; height: 2px; background: var(--border); overflow: hidden; }
+    .activity span { display: block; width: 50px; height: 2px; margin-left: 66px; background: var(--mint); }
+    .status { margin: 17px 0 0; color: var(--text); font-size: 15px; line-height: 1.6; }
+    .footer {
+      position: absolute;
+      left: 48px;
+      right: 48px;
+      bottom: 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      color: var(--quiet);
+      font-size: 13px;
+    }
+    .footer-left, .footer-right { display: flex; align-items: center; gap: 22px; }
+    .footer-right { gap: 10px; }
+    .github-entry { display: flex; align-items: center; gap: 8px; color: var(--muted); text-decoration: none; }
+    .github-mark, .tx-origin { display: block; object-fit: contain; filter: brightness(0) invert(.67); }
+    .light .github-mark, .light .tx-origin { filter: none; }
+    .github-mark {
+      width: 21px;
+      height: 21px;
+    }
+    .tx-origin {
+      width: 48px;
+      height: 24px;
+    }
+  </style>
+</head>
+<body>
+  <main class="stage" aria-label="Static startup concept; not the running application">
+    <div class="language" id="language">EN</div>
+    <section class="panel">
+      <div class="eyebrow" id="eyebrow">本地媒体工作台</div>
+      <div class="wordmark"><span>MediaSlim</span><img class="product-x" id="product-x" src="../../brand/mark.svg" alt="X"></div>
+      <p class="purpose" id="purpose">图片 · MP4 · PDF 批量压缩工具</p>
+      <div class="activity" aria-hidden="true"><span></span></div>
+      <p class="status" id="status" role="status">正在启动本地工作台…</p>
+    </section>
+    <footer class="footer">
+      <div class="footer-left">
+        <span id="version">版本 0.2.0</span>
+        <a class="github-entry" href="https://github.com/tigerx-dev/mediaslimx" aria-label="GitHub repository"><img class="github-mark" src="../../brand/github-mark.png" alt=""><span>GitHub</span></a>
+      </div>
+      <div class="footer-right"><span>by</span><img class="tx-origin" src="../../brand/tigerx-origin-dark.png" alt="TIGERX"></div>
+    </footer>
+  </main>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const english = params.get('lang') === 'en';
+    const light = params.get('theme') === 'light';
+    document.body.classList.toggle('light', light);
+    document.getElementById('product-x').src = light ? '../../brand/mark-dark.svg' : '../../brand/mark.svg';
+    document.documentElement.lang = english ? 'en' : 'zh-CN';
+    if (english) {
+      document.getElementById('language').textContent = '中文';
+      document.getElementById('eyebrow').textContent = 'LOCAL MEDIA WORKBENCH';
+      document.getElementById('purpose').textContent = 'Images · MP4 · PDF batch compressor';
+      document.getElementById('status').textContent = 'Starting the local workspace…';
+      document.getElementById('version').textContent = 'Version 0.2.0';
+    }
+  </script>
+</body>
+</html>

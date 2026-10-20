@@ -1,0 +1,10 @@
+{
+  "package": "Microsoft.Web.WebView2",
+  "version": "1.0.4258.31",
+  "source": "https://api.nuget.org/v3-flatcontainer/microsoft.web.webview2/1.0.4258.31/microsoft.web.webview2.1.0.4258.31.nupkg",
+  "sha256": "56f7f4b8bf9aee4b8efefbbdd4f67d5f74ebd1b100ed0806da71bf76af481aa9",
+  "sha512": "1e5195c2fc8ffc85a25c053c2b9ed59a0e7d9216370d630ec4c9c7e001eeb05472d3fbc3023288b5750854d5e25d76aae022df499c8d522735c0e2259cf2ec3d",
+  "framework": "net462",
+  "architecture": "x64",
+  "runtime_policy": "Use installed Evergreen WebView2 Runtime; never install automatically or fall back to an external browser."
+}

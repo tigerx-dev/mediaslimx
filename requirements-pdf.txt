@@ -1,0 +1,4 @@
+# Optional PDF support; install in the platform's own virtual environment.
+# pikepdf 10.13 is the final release line with CPython 3.10 wheels.
+pikepdf>=10.13,<10.14; python_version < "3.11"
+pikepdf>=10.17,<11; python_version >= "3.11"

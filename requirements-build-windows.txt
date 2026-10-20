@@ -1,0 +1,2 @@
+# Build tools only; do not add to the product's runtime environment.
+pyinstaller==6.16.0

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "target": "windows-x86_64-ucrt",
+  "ffmpeg": {
+    "version": "9.0.2",
+    "url": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz",
+    "sha256": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+    "signature_url": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz.asc",
+    "signing_key_url": "https://ffmpeg.org/ffmpeg-devel.asc",
+    "signing_key_fingerprint": "FCF986EA15E6E293A5644F10B4322F04D67658D8"
+  },
+  "x264": {
+    "repository": "https://code.videolan.org/videolan/x264.git",
+    "commit": "b35605ace3ddf7c1a5d67a2eb553f034aef41d55",
+    "sha256": "791d7d571b4f07109238b21662a9f46ac3da5519d53d4ad2fddf24f524d7d7d7",
+    "archive_recipe": "git archive --format=tar --prefix=x264-b35605ace3ddf7c1a5d67a2eb553f034aef41d55/ b35605ace3ddf7c1a5d67a2eb553f034aef41d55 | xz -9"
+  },
+  "llvm_mingw": {
+    "version": "20260908",
+    "llvm_version": "23.1.1",
+    "url": "https://github.com/mstorsjo/llvm-mingw/releases/download/20260908/llvm-mingw-20260908-ucrt-ubuntu-22.04-x86_64.tar.xz",
+    "sha256": "2258c745e3155870c80793f3e8c80b28fbde11b9ff73c4c78783635b3440b092"
+  },
+  "nasm": {
+    "version": "2.15.05-1",
+    "url": "https://archive.ubuntu.com/ubuntu/pool/universe/n/nasm/nasm_2.15.05-1_amd64.deb",
+    "sha256": "3e2725cfcb308642e1de289e749ad3aad90266d1d6db7f9261ed45ce8f3d734d"
+  }
+}

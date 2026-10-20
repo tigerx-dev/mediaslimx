@@ -1,0 +1,81 @@
+{
+  "kind": "MediaSlim X local launch artwork",
+  "status": "local preparation; not published",
+  "actual_interface": "Local Python service in a browser workbench; no native desktop shell shown or claimed.",
+  "source_screenshots": "assets/showcase/manifest.json",
+  "renderer": "scripts/render-launch-assets.cjs",
+  "brand_source": "assets/brand/mark.svg",
+  "synthetic_media": true,
+  "screenshot_content_edited": false,
+  "screenshot_placement": "Full source screenshot scaled proportionally; no crop or replacement of interface content.",
+  "artifacts": [
+    {
+      "file": "assets/launch/social.zh-CN.png",
+      "source": "assets/launch/social.zh-CN.html",
+      "language": "zh-CN",
+      "width": 1200,
+      "height": 630,
+      "screenshot": "assets/showcase/results.zh-CN.png",
+      "screenshot_sha256": "17f98ca425bb51697764c40bbbdd463d4827c6b4b8a636612d6ca765f5a480a6",
+      "sha256": "100524aa0d3565f36dbc91c4bb974d3391fa3bc13852379f77ce3fe1e27084fb",
+      "synthetic_media_disclosed": true,
+      "external_requests": 0,
+      "layout_checks": {
+        "text_image_separation": true,
+        "footer_clearance": true,
+        "min_text_px": 12
+      }
+    },
+    {
+      "file": "assets/launch/hero.zh-CN.png",
+      "source": "assets/launch/hero.zh-CN.html",
+      "language": "zh-CN",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "assets/showcase/results.zh-CN.png",
+      "screenshot_sha256": "17f98ca425bb51697764c40bbbdd463d4827c6b4b8a636612d6ca765f5a480a6",
+      "sha256": "f507fd2368db608d1526815b3e214c6eb3a9577b527db75aa9de527e3204359e",
+      "synthetic_media_disclosed": true,
+      "external_requests": 0,
+      "layout_checks": {
+        "text_image_separation": true,
+        "footer_clearance": true,
+        "min_text_px": 16
+      }
+    },
+    {
+      "file": "assets/launch/social.en.png",
+      "source": "assets/launch/social.en.html",
+      "language": "en",
+      "width": 1200,
+      "height": 630,
+      "screenshot": "assets/showcase/results.en.png",
+      "screenshot_sha256": "264445c8b625f022f0f23e7e2bf0ce47797de716212f3659a114c2bca84f4c95",
+      "sha256": "5ed12f00b065220ee379bee344231728662529aa3a55add1a661ec11f0021123",
+      "synthetic_media_disclosed": true,
+      "external_requests": 0,
+      "layout_checks": {
+        "text_image_separation": true,
+        "footer_clearance": true,
+        "min_text_px": 12
+      }
+    },
+    {
+      "file": "assets/launch/hero.en.png",
+      "source": "assets/launch/hero.en.html",
+      "language": "en",
+      "width": 1920,
+      "height": 1080,
+      "screenshot": "assets/showcase/results.en.png",
+      "screenshot_sha256": "264445c8b625f022f0f23e7e2bf0ce47797de716212f3659a114c2bca84f4c95",
+      "sha256": "7e9b2800a54713bc9d66aa935fac0a196c5c9e3b07a97b36364788744494c98f",
+      "synthetic_media_disclosed": true,
+      "external_requests": 0,
+      "layout_checks": {
+        "text_image_separation": true,
+        "footer_clearance": true,
+        "min_text_px": 16
+      }
+    }
+  ]
+}
