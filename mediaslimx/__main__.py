@@ -49,7 +49,7 @@ def main():
         from .launch import open_when_ready
         open_when_ready(f"http://127.0.0.1:{args.port}/#token={token}", data, args.open_browser and not args.no_browser)
         print(f"\nMediaSlim X · 本机处理 · 仅监听回环地址\n打开 http://127.0.0.1:{args.port}/#token={token}", flush=True)
-        print("请勿分享令牌。服务器请通过 SSH 隧道访问。Ctrl+C 停止。\n", flush=True)
+        print("请勿分享令牌。本机访问，不要向公网开放。Ctrl+C 停止。\n", flush=True)
         run_server(app, args.port)
     finally:
         lock.close()

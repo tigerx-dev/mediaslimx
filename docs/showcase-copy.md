@@ -50,13 +50,13 @@ A local image, video, and ordinary PDF batch optimizer for independent developer
 
 ### 一套核心，区分运行环境
 
-Python 核心配原生 HTML/CSS/JavaScript，无复杂前端构建或后台队列。首版重点是 Windows 独立窗口，同时保留本地浏览器入口。Linux 源码入口仍在，但独立服务器尚未验收，不作为案例的支持平台主张。不同运行环境各自管理路径和任务数据。
+Python 核心配原生 HTML/CSS/JavaScript，无复杂前端构建或后台队列。首版重点是 Windows 独立窗口，同时保留本地浏览器入口；熟悉开发环境的用户也可在自己电脑的 WSL 中从源码使用。两种环境各自管理路径和任务数据。
 
 目前公开的是源码。Windows 便携包仍需完成依赖材料核对和干净 Windows 验收，尚无可直接下载的安装或便携版本；本机候选包不作为案例下载入口。具体工程记录留在[发布指南](release-guide.md)，案例正文只说明用户实际可用的运行方式。
 
 ### 如实记录验证范围
 
-当前用独立合成素材验证真实扫描、导出、预览、报告、备份恢复、冲突、取消和空间清理。Windows 开发机有原生窗口测试记录；独立 Linux 服务器与实体手机未验收。FIRANO 素材尚未提供，实际网站案例后续另行实测。
+当前用独立合成素材验证真实扫描、导出、预览、报告、备份恢复、冲突、取消和空间清理。Windows 原生窗口与本机 WSL 均有测试记录；实体手机未验收。FIRANO 素材尚未提供，实际网站案例后续另行实测。
 
 ## English case summary
 
@@ -64,7 +64,7 @@ MediaSlim X grew from a routine website-maintenance task: handling a mixed batch
 
 Export is the default. Users can explicitly choose backup-and-replace for folders on the service device; browser imports remain export-only. Restoration checks for later edits and skips conflicts. History archiving and import-copy cleanup are separate operations with different effects.
 
-One Python core serves a Chinese/English HTML/CSS/JavaScript interface. The first version focuses on the Windows standalone window and retains a local browser entry. A Linux source launcher exists, but a separate server has not passed acceptance and is not a supported first-version platform. Source code is public; the Windows portable package is still being prepared and is not yet available for download.
+One Python core serves a Chinese/English HTML/CSS/JavaScript interface. The first version focuses on the Windows standalone window and retains a local browser entry. Developers can also run the source locally in WSL on their own PC. Source code is public; the Windows portable package is still being prepared and is not yet available for download.
 
 This is a small, complete utility case: useful defaults, visible file outcomes, recovery paths and practical packaging. Demonstrations use synthetic media. There are no claimed customers, revenues, fixed savings or real FIRANO performance results.
 

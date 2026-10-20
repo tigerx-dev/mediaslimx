@@ -122,7 +122,7 @@ Windows默认双击 `Start-MediaSlimX.cmd`，经 `scripts/start-window.ps1` 打�
 
 普通 Linux 与 WSL 均用 ./start-linux.sh；旧 ./start-wsl.sh 继续转发到同一入口。路径取脚本实际目录，不依赖用户终端的当前目录。
 - .venv、8765、.mediaslimx/wsl。
-- 默认不自动开浏览器；可加 --open-browser。在服务器使用 SSH 隧道。
+- 默认不自动开浏览器；可加 --open-browser。首版按本机访问说明，不将远程部署作为已验收使用方式。
 - 自动创建时只调用 Linux python3，不调用 Windows Python 或复用 .venv-win。
 
 ## 明确的路径规则

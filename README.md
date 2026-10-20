@@ -37,16 +37,16 @@ MediaSlim X 是一个免费开源的本地批量压缩工具。扫描文件夹�
 
 若只想用浏览器界面，可运行 **`Start-MediaSlimX-Browser.cmd`**。它与独立窗口共用处理核心，但各自保存任务记录。不要直接打开 `mediaslimx/static/index.html`：界面需要本机服务。
 
-### 其他 Linux 环境
+### 本机 WSL：源码试用
 
-源码保留 `./start-linux.sh` 网页入口，供熟悉 Linux 的用户在自己控制的设备上试用。独立 Linux 服务器尚未完整验收，暂不作为首版支持平台。该入口使用 Linux 自己的 Python、路径和任务数据；不能填入 Windows 路径。详细边界见[平台状态](docs/platforms.md)。
+如果项目文件位于自己电脑的 WSL，先在 WSL 中准备 Python 3.10+（处理 MP4 还需 FFmpeg、ffprobe），再运行 `./start-linux.sh`，用浏览器打开终端给出的本机地址。首次启动会建立独立的 `.venv`；路径和任务数据也与 Windows 分开，不能直接填入 Windows 路径。此入口供本机源码试用；首版仍以 Windows 独立窗口为主。
 
 ### 可选 PDF 支持
 
 基础依赖不包含 pikepdf。先完成一次源码启动，再在**正在使用的平台环境**中安装并重启工具：
 
 ```bash
-# Linux
+# 本机 WSL
 .venv/bin/python -m pip install -r requirements-pdf.txt
 ```
 
@@ -66,13 +66,13 @@ Windows 在项目目录运行：
 
 ![合成素材任务的实际结果页，显示逐文件状态与节省量](assets/showcase/results.zh-CN.png)
 
-目录扫描只读取所选范围内的候选媒体，不跟随符号链接，并跳过隐藏、依赖、输出及备份目录。浏览器拖入文件或文件夹会把**副本传到当前连接的 MediaSlim X 服务**，因此这类导入只允许导出；若服务运行在另一台设备，副本也会传到那台设备，请只连接自己控制的服务。浏览器导入限每批 200 个媒体文件、2 GiB，大批量请扫描运行设备上的目录。
+目录扫描只读取所选范围内的候选媒体，不跟随符号链接，并跳过隐藏、依赖、输出及备份目录。浏览器拖入文件或文件夹会把**副本传到当前连接的 MediaSlim X 服务**，因此这类导入只允许导出；按上述本机方式启动时，副本留在本机。浏览器导入限每批 200 个媒体文件、2 GiB，大批量请扫描本机目录。其他连接方式的数据边界见[隐私与安全](docs/privacy-security.md)。
 
 工具不把媒体上传第三方，也不接入账号、遥测或外部 CDN。默认只监听 `127.0.0.1`，不要直接暴露到公网。详情见[隐私与安全](docs/privacy-security.md)。
 
 ## 验证、文档与许可
 
-Windows 源码窗口已在开发机用合成素材验证；独立 Linux 服务器、macOS 与实体手机尚未完整验证。现有演示数字只来自合成素材，不代表实际网站收益。详细状态见[平台状态](docs/platforms.md)和[发布指南](docs/release-guide.md)。
+Windows 源码窗口与本机 WSL 已用合成素材验证；macOS 与实体手机尚未完整验证。现有演示数字只来自合成素材，不代表实际网站收益。详细状态见[平台状态](docs/platforms.md)和[发布指南](docs/release-guide.md)。
 
 运行 Python 测试：
 

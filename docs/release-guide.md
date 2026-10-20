@@ -4,7 +4,7 @@
 
 ## 下载与托管怎么安排
 
-**当前方案**：先公开源码；待验收后再从对应 tag 发布 Windows 独立窗口便携包与材料附件。个人站以后只做介绍与跳转。Linux 源码入口保留，但独立服务器未验收、不是首版发行目标；不做在线引导包。不把候选便携包当作下载附件，也不预先创建指向未完成包的 Release。
+**当前方案**：先公开源码；待验收后再从对应 tag 发布 Windows 独立窗口便携包与材料附件。个人站以后只做介绍与跳转。本机 WSL 源码入口保留供开发者试用，不作为单独发行版本；不做在线引导包。不把候选便携包当作下载附件，也不预先创建指向未完成包的 Release。
 
 | 入口 | 面向谁 | 获得什么 | 是否需要安装环境 |
 | --- | --- | --- | --- |
@@ -32,9 +32,9 @@ The new window bundle includes its Python/media environment and requires an alre
 
 Windows 独立窗口源码与 WebView2 助手已实现，复用现有工作台与 Python 核心。窗口版双击进入自己的窗口，不启动外部浏览器；繁忙时关窗先确认，取消剩余工作后等待媒体事务与已接纳请求安全结束，再停止自己的后台。选择继续使用则不退出，不按名称终止其他 Python、FFmpeg 或浏览器进程。
 
-源码默认入口 `Start-MediaSlimX.cmd` 使用 Windows `pythonw.exe`、`.mediaslimx/windows-window` 与 8767–8866 中可用端口；网页兼容入口 `Start-MediaSlimX-Browser.cmd` 保留 8766 / `.mediaslimx/windows`。Linux 网页源码入口保留供自行试用，独立服务器未完成验收。PWA 与 Chrome 扩展未实现，不作为本次发行内容。窗口详细边界见 [windows-window.md](windows-window.md)。
+源码默认入口 `Start-MediaSlimX.cmd` 使用 Windows `pythonw.exe`、`.mediaslimx/windows-window` 与 8767–8866 中可用端口；网页兼容入口 `Start-MediaSlimX-Browser.cmd` 保留 8766 / `.mediaslimx/windows`。本机 WSL 可从源码运行网页入口。PWA 与 Chrome 扩展未实现，不作为本次发行内容。窗口详细边界见 [windows-window.md](windows-window.md)。
 
-Windows standalone-window source is implemented; its own service drains safely on close. Local WebView2 interactions have been tested on the developer machine, while the final window payload and clean-Windows acceptance remain distinct verification gates. A Linux source browser entry remains available, but a separate server is not a validated first-release target. PWA and Chrome extensions are not implemented.
+Windows standalone-window source is implemented; its own service drains safely on close. Local WebView2 interactions have been tested on the developer machine, while the final window payload and clean-Windows acceptance remain distinct verification gates. Developers may run the source locally in WSL. PWA and Chrome extensions are not implemented.
 
 ## 当前发行阻塞
 
@@ -74,7 +74,7 @@ The extracted official-Python 3.13.16 candidate passed an isolated native WebVie
 - 检查每个附件 SHA-256、许可证和配套源码索引；普通用户只需下载 runtime ZIP。SHA-256 用于核对完整性，不等于代码签名或安全认证。
 - 检查 Git 白名单与公开截图，移除私有绝对路径、用户名、访问令牌、实际任务记录和 FIRANO 私有素材；展示使用合成素材。
 - 源码提交使用本仓库 `tigerx-dev` 和 GitHub noreply 地址，不改全局 Git 身份；便携包后续另行核对实际 tag、材料和附件，不从本机候选文件名推断公开版本。
-- 现有 40 秒中文演示来自当前 WSL 浏览器工作台与合成素材，不冒充 Windows 独立窗口实拍；上线时替换片尾“尚未发布”并检查视频及链接。最终下载页写明 Runtime 前提、当前未实现自动更新和服务器网页入口。
+- 现有 40 秒中文演示来自本机 WSL 浏览器工作台与合成素材，不冒充 Windows 独立窗口实拍；上线时替换片尾“尚未发布”并检查视频及链接。最终下载页写明 Runtime 前提和当前未实现自动更新。
 - 源码首次提交与推送不包含任何二进制附件；便携包仍等待完整发行门槛，后续在实际 tag 上单独创建 Release。GitHub 官方支持先存草稿、附加二进制、标记 pre-release，再显式发布。[GitHub：Managing releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)。
 
 ## 校验示例

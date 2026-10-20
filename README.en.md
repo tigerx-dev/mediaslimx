@@ -37,16 +37,16 @@ See the [v1 specification](docs/v1-spec.md) for exact limits and skip reasons. I
 
 For the browser interface instead, run **`Start-MediaSlimX-Browser.cmd`**. It uses the same processing core but keeps its own task history. Do not open `mediaslimx/static/index.html` directly: the interface needs the local service.
 
-### Other Linux environments
+### Local WSL: source-based use
 
-The source includes a `./start-linux.sh` browser entry for people comfortable running it on a device they control. A separate Linux server has not passed full acceptance and is not a first-version support target. This entry uses its own Linux Python environment, paths and task data; Windows paths cannot be pasted into it. See [platform status](docs/platforms.md) for details.
+If your project files are in WSL on your own PC, prepare Python 3.10+ there (and FFmpeg plus ffprobe for MP4), run `./start-linux.sh`, then open the local URL it prints. The first launch creates a separate `.venv`; paths and task data also stay separate from Windows, so Windows paths cannot be pasted into it. This is a local source-based option. The first version remains focused on the Windows standalone window.
 
 ### Optional PDF support
 
 The base requirements do not include pikepdf. After the first source launch, install it into the environment for the platform you are using, then restart the tool:
 
 ```bash
-# Linux
+# Local WSL
 .venv/bin/python -m pip install -r requirements-pdf.txt
 ```
 
@@ -66,13 +66,13 @@ Without this dependency, images and videos still work; PDFs show an actionable s
 
 ![Actual result page from a synthetic-media task, with per-file outcomes and measured savings](assets/showcase/results.en.png)
 
-Folder scans read candidate media only inside the selected scope. They do not follow symlinks and skip hidden, dependency, output and backup directories. Dropping files or folders through the browser sends **copies to the MediaSlim X service you are connected to**, so browser imports are export-only. If that service runs on another device, copies go to that device; connect only to a service you control. Browser imports are limited to 200 media files and 2 GiB per batch; scan a folder on the service device for larger sets.
+Folder scans read candidate media only inside the selected scope. They do not follow symlinks and skip hidden, dependency, output and backup directories. Dropping files or folders through the browser sends **copies to the MediaSlim X service you are connected to**, so browser imports are export-only. With the local launch described above, those copies remain on your PC. Browser imports are limited to 200 media files and 2 GiB per batch; scan a local folder for larger sets. See [privacy and security](docs/privacy-security.md) for other connection boundaries.
 
 The tool does not upload media to third parties or use accounts, telemetry or external CDNs. The service binds to `127.0.0.1` by default; do not expose it directly to the public internet. See [privacy and security](docs/privacy-security.md).
 
 ## Validation, docs and license
 
-The Windows source window has been tested with synthetic media on the developer machine. A separate Linux server, macOS and physical phones have not been fully verified. Demo savings come only from synthetic files, not a real website. See [platform status](docs/platforms.md) and the [release guide](docs/release-guide.md).
+The Windows source window and local WSL have been tested with synthetic media. macOS and physical phones have not been fully verified. Demo savings come only from synthetic files, not a real website. See [platform status](docs/platforms.md) and the [release guide](docs/release-guide.md).
 
 Run Python tests:
 
