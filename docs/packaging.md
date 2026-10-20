@@ -1,10 +1,10 @@
 # Windows 便携包与启动方式
 
-当前 Windows 独立窗口候选完整解压后双击 `MediaSlimX.exe`，在自己的窗口中打开工作台，不启动外部浏览器；关闭时由该实例安全收尾自己的任务、助手与服务。窗口复用现有网页界面和 Python 核心，通过 WebView2 显示，不重写媒体处理逻辑。Linux/WSL 服务器继续使用网页与 SSH 隧道。
+Windows 独立窗口便携包完整解压后双击 `MediaSlimX.exe`，在自己的窗口中打开工作台，不启动外部浏览器；关闭时由该实例安全收尾自己的任务、助手与服务。窗口复用现有网页界面和 Python 核心，通过 WebView2 显示，不重写媒体处理逻辑。源码的其他本地启动方式见 README；首个便携发行目标是 Windows x64。
 
 Windows x64 `onedir` 包提供 Python、图片/PDF 引擎、FFmpeg 与 ffprobe；**窗口版需要机器已安装 WebView2 Evergreen Runtime，该 Runtime 不捆绑在包内**。缺少时显示说明，不自动下载安装或退回浏览器。旧控制台/浏览器 r3 候选和构建方式继续保留，两种包的体积、指纹和验证证据分别记录。详情见 [Windows 独立窗口](windows-window.md)。
 
-最新 **official-python313-r1 本机候选** 使用可核对的官方 CPython 3.13.16 供应商包。实际解压 EXE 的独立 WebView2 合成测试通过 200 文件导入上限、201 文件目录扫描与导出、五种格式结果、CSV、预览、中英主题、原件指纹及空闲退出。旧 r10 的暂停续做与卡片间距证据独立保留；本次没有替换用户实例或改写其数据。
+**refresh-20261020-r2 本机候选**沿用可核对的官方 CPython 3.13.16 供应商材料，以当前源码和重编的窗口助手生成，包含结果表操作对齐与状态层级调整。实际解压 EXE 的合成 PDF worker 四项通过；隔离 WebView2 窗口又通过 12 项合成素材流程，包含 201 文件目录扫描与导出、五格式结果、CSV、预览和中英深浅主题。空闲点击本实例“退出工具”后，自有进程、私有端口和工作目录清理完成；繁忙物理标题栏退出仍属另一项验收。前一版 official-python313-r1 的证据不转记到新包。本次没有替换用户实例或改写其数据。
 
 ## 状态与分发边界
 
@@ -44,13 +44,15 @@ Windows x64 `onedir` 包提供 Python、图片/PDF 引擎、FFmpeg 与 ffprobe�
 | 独立窗口 r4 完整解压 | 84,967,872 字节 / 81.03 MiB |
 | 独立窗口 r5 ZIP | 37,802,628 字节 / 36.05 MiB |
 | 独立窗口 r5 完整解压 | 84,967,885 字节 / 81.03 MiB |
-| 最新官方 Python 3.13 窗口 r1 ZIP | 38,123,090 字节 / 36.36 MiB |
+| 当前 Windows 窗口 refresh-20261020-r2 ZIP | 38,160,897 字节 / 36.39 MiB |
+| 前一版 Windows 窗口 refresh-20261020-r1 ZIP | 38,160,740 字节 / 36.39 MiB |
+| 前一版官方 Python 3.13 窗口 r1 ZIP | 38,123,090 字节 / 36.36 MiB |
 | 历史独立窗口 r10 ZIP | 37,806,296 字节 / 36.05 MiB |
 | 历史独立窗口 r8 ZIP | 37,808,279 字节 / 36.06 MiB |
 | 历史独立窗口 r7 ZIP | 37,688,174 字节 / 35.94 MiB |
 | 历史独立窗口 r7 完整解压 | 84,710,640 字节 / 80.79 MiB |
 
-最新文件：`.mediaslimx/packaging/official-313-candidates/MediaSlimX-windows-x64-validation-candidate-official-python313-r1.zip`，SHA-256 `3433bb9ff6c9281bb748e87b19a194fe1a33efbadf004ddf743b0717443ab3f3`；对应材料 ZIP 为 307,721,642 字节，SHA-256 `73c8e1339af43c3ba311454fb5fb6758b582cb54567fc29f31836a416fc6d6a8`。材料独立保存，普通运行不需解压；两者都未发布。合成窗口流程报告见 `.mediaslimx/window-tests/window 中文 space d62b5f2d9b784b9e9b2bb28fb6aa595e/window-ui-report.json`。
+当前文件：`.mediaslimx/packaging/refresh-20261020/MediaSlimX-windows-x64-validation-candidate-refresh-20261020-r2.zip`，SHA-256 `6a188384632f2715b53746de03f92f27bd93f4981c27673ee09440c5eee080f2`；对应材料 ZIP 的 SHA-256 为 `ce45d2db925725178bff41420b0845295fdc8915dc5642277309036240d871d3`。材料独立保存，普通运行不需解压；两者都未发布。前一版 `official-python313-r1` 的 ZIP、材料和窗口流程证据独立保留，不能代替当前包验收。
 
 历史 r10 文件：`.mediaslimx/packaging/MediaSlimX-windows-x64-validation-candidate-windows-window-r10.zip`，SHA-256 `6ebb5366cca8c5aa7789f1401d3e6e3530cf0d622adcd6810f283fb5b110c5a1`；对应材料 ZIP 为 278,303,903 字节，SHA-256 `e90d328565be134aad37fe2fffe8b6a2d74c615977577f7924607c175b8153ce`。旧证据在 `.mediaslimx/packaging/window-zip-r10-resume/static-assets-report.json` 和 `.mediaslimx/packaging/window-workers-6fa019c804eb49e8a54e5a8ad0a37ce0/report.json`，不转记新候选。
 
@@ -70,7 +72,7 @@ Windows x64 `onedir` 包提供 Python、图片/PDF 引擎、FFmpeg 与 ffprobe�
 
 浏览器r3历史文件：`.mediaslimx/packaging/MediaSlimX-windows-x64-validation-candidate-packaging-r3.zip`，SHA-256 `c631fdbc5fdba90576005ec1b653e85ddd428d60b9610f16aadef1fcc99395b9`；其同名 `-third-party-materials.zip` 仍与原包配套。各包完整分项分别见同目录各自的 `*-size-inventory.json`；已有产物不覆盖，仍为带待核实项目的本机候选。
 
-The latest local official-Python-3.13 window candidate is 36.36 MiB compressed. It requires an installed WebView2 Runtime. Its extracted EXE passed an isolated synthetic native-window scan/export, preview and CSV flow; its PDF worker passed separately. Exact lxml/iconv provenance and clean-Windows acceptance remain open. No public release has been made.
+The current Windows x64 validation candidate is 36.39 MiB compressed and requires an installed WebView2 Runtime. Its extracted EXE passed four synthetic PDF-worker checks and a fresh 12-check isolated WebView2 scan/export/preview flow. An idle in-app exit stopped its private processes and ports. Exact lxml/iconv provenance and clean-Windows acceptance remain open. No public binary release has been made.
 
 ## 数据、端口与退出
 
@@ -135,7 +137,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\build-windows.ps1 `
 
 ## 验证方式
 
-### 最新独立窗口 official-python313-r1
+### 当前独立窗口 refresh-20261020-r2
+
+当前源码与离线重编窗口助手生成的运行 ZIP、配套材料 ZIP 均位于忽略的 `.mediaslimx/packaging/refresh-20261020/`。构建清单标记 `LOCAL_VALIDATION_CANDIDATE_NOT_FOR_PUBLICATION`，仍列出 lxml 静态 iconv 来源/重链接材料、真实干净 Windows 验收两项阻塞。实际解压 EXE 的合成 PDF worker 四项通过；私有 Windows WebView2 12 项窗口流程通过，报告在 `.mediaslimx/window-tests/window 中文 space 0743e7273bb448548b036187b8b4d4f0/window-ui-report.json`。空闲退出后测试实例的自有进程和端口清零、工作目录为空。缺 Runtime、繁忙物理标题栏和干净系统尚未在该包上验证。
+
+### 前一版独立窗口 official-python313-r1
 
 新候选的 ZIP、材料 ZIP 指纹及实测范围见上方“运行包实测”和 [窗口验证记录](windows-window.md)。201 文件目录实际导出与五格式、CSV、预览、两种语言/主题通过；空闲退出后本实例窗口记录、端口、所属进程与临时工作区清理完成。缺 WebView2 Runtime、繁忙物理标题栏 X 和干净 Windows 尚未验证。
 

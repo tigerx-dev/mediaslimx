@@ -644,6 +644,7 @@ function renderResults(){
  $("result-body").replaceChildren();
  for(const e of entries){
   const tr=el("tr"),status=el("td",labels[e.status]||e.status,e.status==="failed"||e.status==="restore_conflict"?"bad":"badge");
+  status.dataset.status=e.status;
   if(e.reason)status.append(el("span",e.reason,"reason"));
   const actions=el("td"),detail=el("button","详情");detail.dataset.detailId=e.id;detail.onclick=()=>details(e,detail).catch(showError);actions.append(detail);
   if(t.mode==="backup"&&e.backup&&["success","restore_conflict"].includes(e.status)){const restore=el("button","恢复");restore.disabled=active;restore.onclick=()=>restoreTask(e.id);actions.append(" ",restore);}

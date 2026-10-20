@@ -175,7 +175,8 @@ def project_source_snapshot(project, destination):
     destination = destination.resolve()
     selected = set()
     for pattern in ("LICENSE", "README*.md", "DESIGN.md", "requirements*.txt",
-                    "Start-MediaSlimX.cmd", "Start-MediaSlimX-Browser.cmd", "start-linux.sh", "start-wsl.sh", "mediaslimx/**/*.py",
+                    "Start-MediaSlimX.cmd", "Start-MediaSlimX-Browser.cmd", "Start-MediaSlimX.vbs",
+                    "start-linux.sh", "start-wsl.sh", "mediaslimx/**/*.py",
                     "mediaslimx/static/**/*", "assets/brand/**/*", "docs/**/*.md",
                     "scripts/*.py", "scripts/*.ps1", "scripts/*.sh", "scripts/media-engine-sources.json",
                     "scripts/window-host-sdk.json", "native/**/*.cs",

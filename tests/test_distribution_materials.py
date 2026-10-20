@@ -78,7 +78,7 @@ class DistributionMaterialTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             project, target = root / "project", root / "snapshot"
-            for name in ("LICENSE", "README.md", "mediaslimx/app.py", "mediaslimx/static/app.js",
+            for name in ("LICENSE", "README.md", "Start-MediaSlimX.vbs", "mediaslimx/app.py", "mediaslimx/static/app.js",
                          "assets/brand/app-icon.ico", "scripts/build-windows.py",
                          ".mediaslimx/windows/server.json", "private.jpg", ".git/config"):
                 file = project / name
@@ -87,6 +87,7 @@ class DistributionMaterialTests(unittest.TestCase):
             manifest = build.project_source_snapshot(project, target)
             paths = {item["path"] for item in manifest["files"]}
             self.assertIn("mediaslimx/app.py", paths)
+            self.assertIn("Start-MediaSlimX.vbs", paths)
             self.assertIn("assets/brand/app-icon.ico", paths)
             self.assertFalse(any("server.json" in path or ".git/" in path or path == "private.jpg" for path in paths))
             self.assertIsNone(manifest["git_commit"])

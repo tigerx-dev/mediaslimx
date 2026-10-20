@@ -12,9 +12,9 @@ Hyper-V 与 VirtualMachinePlatform 原已启用、管理服务运行；普通会
 
 Windows Sandbox was enabled with explicit approval and `-NoRestart`; Windows reports `RestartNeeded=true`, and its executable is not present yet. No restart or clean Windows guest execution has occurred. Host self-tests remain separate from clean-OS results.
 
-2026-10-19 最新待验对象是官方 Python 3.13.16 独立窗口候选 `official-python313-r1`，运行 ZIP 为 38,123,090 字节（36.36 MiB）、SHA-256 `3433bb9ff6c9281bb748e87b19a194fe1a33efbadf004ddf743b0717443ab3f3`。其开发机 Windows WebView2 合成素材流程和 PDF worker 已验证，仍有 lxml 分发材料阻塞；**尚未为这个 ZIP 执行干净 Windows 客体验收**。下面的 r3 套件只是旧候选的历史自测，不能沿用其报告或哈希。用户未安排重启前不运行 Sandbox；待材料门槛解除并确定最终 payload，再按本页重新生成与该 ZIP 指纹绑定的离线套件。
+2026-10-20 当前待验对象是重新构建的官方 Python 3.13.16 独立窗口候选 `refresh-20261020-r2`，运行 ZIP 为 38,160,897 字节（36.39 MiB）、SHA-256 `6a188384632f2715b53746de03f92f27bd93f4981c27673ee09440c5eee080f2`。其实际解压 EXE 的合成 PDF worker 四项和隔离 Windows WebView2 主流程 12 项通过；空闲退出后测试实例清理完成。它仍有 lxml 分发材料阻塞，**也未执行干净 Windows 客体验收**。下面的 r3 套件只是旧候选的历史自测，不能沿用其报告或哈希。用户未安排重启前不运行 Sandbox；待材料门槛解除并确定最终 payload，再按本页重新生成与该 ZIP 指纹绑定的离线套件。
 
-The latest standalone candidate uses official Python 3.13.16 and passed local synthetic-media checks, but its lxml distribution-material gate and clean-Windows guest test remain open. The r3 kit below is historical; bind a fresh offline kit to the final archive after the user-controlled restart, without reusing its evidence.
+The current standalone candidate uses official Python 3.13.16 and passed four isolated PDF-worker checks plus a 12-check native-window workflow on the development machine. Its lxml material gate and clean-Windows guest test remain open. The r3 kit below is historical; bind a fresh offline kit to the final archive after the user-controlled restart, without reusing its evidence.
 
 2026-10-17，当时的精简内部候选为 `MediaSlimX-windows-x64-validation-candidate-packaging-r3.zip`（37,469,902 bytes，约 35.73 MiB）。已为该 ZIP 生成支持 JSON 观察握手的最终套件，并在独立开发机自测中通过本流程的 8 组检查；报告明确 `status=host_self_test_passed`、`environment.clean_windows=false`。ZIP SHA-256 为 `c631fdbc5fdba90576005ec1b653e85ddd428d60b9610f16aadef1fcc99395b9`，最终私有套件与开发机报告位于 `.mediaslimx/clean-windows/1e87942f0bb64a1f9213c543721ccb68/`。真正 Sandbox 输出目录保留 `NOT-RUN.json`，没有启动客体或填写任何实际观察答案，旧套件与证据也保留。该候选已包含受跟踪选择器的退出保护与正常 SIGINT 返回处理；本流程的 8 组检查仍不能代替独立的 Ctrl+Break 实测。
 

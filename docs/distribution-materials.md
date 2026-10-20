@@ -53,6 +53,8 @@ For the new candidate, link the exact PyPI wheel hash above to a verifiable Wind
 
 实际冻结的 `official-python313-r1` 窗口 ZIP 为 38,123,090 字节（36.36 MiB），SHA-256 `3433bb9ff6c9281bb748e87b19a194fe1a33efbadf004ddf743b0717443ab3f3`；配套材料 ZIP 为 307,721,642 字节，SHA-256 `73c8e1339af43c3ba311454fb5fb6758b582cb54567fc29f31836a416fc6d6a8`。实际解压 EXE 的 PDF worker 四组通过；独立 Windows WebView2 窗口用合成素材验证了导入上限、201 文件目录扫描与导出、JPG/PNG/WebP/MP4/PDF 结果、CSV、预览、原件指纹、两种语言/主题和本机目录选择器取消。空闲退出后私有窗口记录与临时工作区消失。证据在 `.mediaslimx/window-tests/window 中文 space d62b5f2d9b784b9e9b2bb28fb6aa595e/window-ui-report.json`。真实干净 Windows 验收仍待用户方便时手动重启之后进行；当前窗口不替换用户实例。
 
+2026-10-20 从当前源码另建 `refresh-20261020-r2` 本机候选，运行 ZIP 为 38,160,897 字节，SHA-256 `6a188384632f2715b53746de03f92f27bd93f4981c27673ee09440c5eee080f2`；对应材料 ZIP SHA-256 `ce45d2db925725178bff41420b0845295fdc8915dc5642277309036240d871d3`。构建器仍记录 lxml 来源/重链接材料和真实干净 Windows 两项阻塞，状态为 `LOCAL_VALIDATION_CANDIDATE_NOT_FOR_PUBLICATION`。实际解压 EXE 的合成 PDF worker 四项、隔离 Windows WebView2 主流程 12 项通过，空闲退出后自有进程、端口和工作目录清理；报告在 `.mediaslimx/window-tests/window 中文 space 0743e7273bb448548b036187b8b4d4f0/window-ui-report.json`。源码材料快照已纳入 Windows 双击入口 `Start-MediaSlimX.vbs`，仍排除工作数据与私有媒体。
+
 ## 构建与状态门槛
 
 ```powershell

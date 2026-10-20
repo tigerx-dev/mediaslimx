@@ -482,6 +482,11 @@ dialog.task-plan-dialog>.dialog-header{flex:none;margin:0;padding:16px 24px;bord
 .file-panel>.table-wrap,.results-panel>.table-wrap{margin-inline:var(--table-gutter)}
 .results-panel th:first-child,.results-panel td:first-child{padding-left:0}
 .file-panel th:last-child,.file-panel td:last-child,.results-panel th:last-child,.results-panel td:last-child{padding-right:0}
+.results-panel th:last-child,.results-panel td:last-child{text-align:right;white-space:nowrap}
+.results-panel td:last-child{min-width:122px}
+.results-panel td[data-status="no_gain"],.results-panel td[data-status="duplicate"],.results-panel td[data-status="unsupported"],.results-panel td[data-status="cancelled"]{color:var(--muted)}
+.results-panel td[data-status="failed"],.results-panel td[data-status="restore_conflict"]{color:var(--danger);font-weight:600}
+.results-panel td[data-status="failed"] .reason,.results-panel td[data-status="restore_conflict"] .reason{font-weight:400}
 .file-panel td.selection-cell{cursor:pointer}
 .file-panel td.selection-cell:has(input:disabled){cursor:default}
 .file-panel td.selection-cell:hover:not(:has(input:disabled)){background:var(--accent-soft)}
@@ -536,6 +541,7 @@ dialog.delete-record-dialog>.dialog-header{flex:none;position:static;margin:0;pa
 .detail-status-line{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 12px;margin-bottom:16px}
 #detail-status{font-size:var(--text-control);font-weight:600;color:var(--ink)}
 #detail-status[data-status=success],#detail-status[data-status=restored]{color:var(--accent)}
+#detail-status[data-status=no_gain],#detail-status[data-status=duplicate],#detail-status[data-status=unsupported],#detail-status[data-status=cancelled]{color:var(--muted)}
 #detail-status[data-status=failed],#detail-status[data-status=restore_conflict]{color:var(--danger)}
 #detail-reason{margin:0;min-width:0;overflow-wrap:anywhere}
 .detail-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0 0 20px;padding:0 0 20px;border-bottom:1px solid var(--line)}
