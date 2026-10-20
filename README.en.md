@@ -6,7 +6,7 @@
 
 MediaSlim X is a free, open-source local batch compression tool. Scan a folder, select images, MP4 videos or PDFs, and inspect what actually happened to each file. By default, it exports to a new directory while keeping originals, filenames and relative folder structure.
 
-**Source code is the only public download for now.** The Windows standalone window and Linux/WSL browser interface can run from source, but there is no ready-to-run Windows portable package or other binary download. GitHub's **Download ZIP** contains source and requires the environment below. Portable distribution is waiting on dependency licensing materials and clean-Windows acceptance.
+**Source code is the only public download for now.** This first version focuses on the Windows standalone window. There is no ready-to-run Windows portable package or other binary download. GitHub's **Download ZIP** contains source and requires the environment below. Portable distribution is waiting on dependency licensing materials and clean-Windows acceptance.
 
 ## What it does
 
@@ -37,28 +37,16 @@ See the [v1 specification](docs/v1-spec.md) for exact limits and skip reasons. I
 
 For the browser interface instead, run **`Start-MediaSlimX-Browser.cmd`**. It uses the same processing core but keeps its own task history. Do not open `mediaslimx/static/index.html` directly: the interface needs the local service.
 
-### Linux / WSL: browser interface
+### Other Linux environments
 
-Install **Python 3.10+** and, for MP4, FFmpeg and ffprobe for this platform. From the project directory run:
-
-```bash
-./start-linux.sh
-```
-
-The same script works on standard Linux and WSL; the old `start-wsl.sh` entry remains available. The first launch creates a separate Linux/WSL `.venv` and installs pinned dependencies. Open the **complete local URL** printed in the terminal. To scan media outside the project directory, add `--allow-root /absolute/media/path`. On a server, keep the service bound to loopback and use an SSH tunnel, for example:
-
-```bash
-ssh -N -L 8765:127.0.0.1:8765 user@server
-```
-
-Windows and WSL do not share virtual environments, paths or task data. A Windows path such as `D:\...` cannot be pasted into the WSL service.
+The source includes a `./start-linux.sh` browser entry for people comfortable running it on a device they control. A separate Linux server has not passed full acceptance and is not a first-version support target. This entry uses its own Linux Python environment, paths and task data; Windows paths cannot be pasted into it. See [platform status](docs/platforms.md) for details.
 
 ### Optional PDF support
 
 The base requirements do not include pikepdf. After the first source launch, install it into the environment for the platform you are using, then restart the tool:
 
 ```bash
-# Linux / WSL
+# Linux
 .venv/bin/python -m pip install -r requirements-pdf.txt
 ```
 
@@ -78,13 +66,13 @@ Without this dependency, images and videos still work; PDFs show an actionable s
 
 ![Actual result page from a synthetic-media task, with per-file outcomes and measured savings](assets/showcase/results.en.png)
 
-Folder scans read candidate media only inside the selected scope. They do not follow symlinks and skip hidden, dependency, output and backup directories. Dropping files or folders through the browser sends **copies to the MediaSlim X service you are connected to**, so browser imports are export-only. When connected to a remote service, those copies go to that server. Browser imports are limited to 200 media files and 2 GiB per batch; scan a folder on the service device for larger sets.
+Folder scans read candidate media only inside the selected scope. They do not follow symlinks and skip hidden, dependency, output and backup directories. Dropping files or folders through the browser sends **copies to the MediaSlim X service you are connected to**, so browser imports are export-only. If that service runs on another device, copies go to that device; connect only to a service you control. Browser imports are limited to 200 media files and 2 GiB per batch; scan a folder on the service device for larger sets.
 
-The tool does not upload media to third parties or use accounts, telemetry or external CDNs. Remote previews still travel over the connection you establish to the browser. The service binds to `127.0.0.1` by default; do not expose it directly to the public internet. See [privacy and security](docs/privacy-security.md).
+The tool does not upload media to third parties or use accounts, telemetry or external CDNs. The service binds to `127.0.0.1` by default; do not expose it directly to the public internet. See [privacy and security](docs/privacy-security.md).
 
 ## Validation, docs and license
 
-The Windows source window and WSL/Linux core have been tested with synthetic media. A separate Linux server, macOS and physical phones have not been fully verified. Demo savings come only from synthetic files, not a real website. See [platform status](docs/platforms.md) and the [release guide](docs/release-guide.md).
+The Windows source window has been tested with synthetic media on the developer machine. A separate Linux server, macOS and physical phones have not been fully verified. Demo savings come only from synthetic files, not a real website. See [platform status](docs/platforms.md) and the [release guide](docs/release-guide.md).
 
 Run Python tests:
 

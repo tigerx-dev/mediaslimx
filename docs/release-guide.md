@@ -4,7 +4,7 @@
 
 ## 下载与托管怎么安排
 
-**当前方案**：先公开源码；待验收后再从对应 tag 发布 Windows 独立窗口便携包与材料附件。个人站以后只做介绍与跳转，服务器版保留网页，不做在线引导包。不把候选便携包当作下载附件，也不预先创建指向未完成包的 Release。
+**当前方案**：先公开源码；待验收后再从对应 tag 发布 Windows 独立窗口便携包与材料附件。个人站以后只做介绍与跳转。Linux 源码入口保留，但独立服务器未验收、不是首版发行目标；不做在线引导包。不把候选便携包当作下载附件，也不预先创建指向未完成包的 Release。
 
 | 入口 | 面向谁 | 获得什么 | 是否需要安装环境 |
 | --- | --- | --- | --- |
@@ -32,9 +32,9 @@ The new window bundle includes its Python/media environment and requires an alre
 
 Windows 独立窗口源码与 WebView2 助手已实现，复用现有工作台与 Python 核心。窗口版双击进入自己的窗口，不启动外部浏览器；繁忙时关窗先确认，取消剩余工作后等待媒体事务与已接纳请求安全结束，再停止自己的后台。选择继续使用则不退出，不按名称终止其他 Python、FFmpeg 或浏览器进程。
 
-源码默认入口 `Start-MediaSlimX.cmd` 使用 Windows `pythonw.exe`、`.mediaslimx/windows-window` 与 8767–8866 中可用端口；网页兼容入口 `Start-MediaSlimX-Browser.cmd` 保留 8766 / `.mediaslimx/windows`。Linux/WSL 与服务器网页流程原样保留。PWA 与 Chrome 扩展未实现，不作为本次发行内容。窗口详细边界见 [windows-window.md](windows-window.md)。
+源码默认入口 `Start-MediaSlimX.cmd` 使用 Windows `pythonw.exe`、`.mediaslimx/windows-window` 与 8767–8866 中可用端口；网页兼容入口 `Start-MediaSlimX-Browser.cmd` 保留 8766 / `.mediaslimx/windows`。Linux 网页源码入口保留供自行试用，独立服务器未完成验收。PWA 与 Chrome 扩展未实现，不作为本次发行内容。窗口详细边界见 [windows-window.md](windows-window.md)。
 
-Windows standalone-window source is implemented; its own service drains safely on close. Local WebView2 interactions have been tested on the developer machine, while the final window payload and clean-Windows acceptance remain distinct verification gates. The Linux/server browser workflow is retained. PWA and Chrome extensions are not implemented.
+Windows standalone-window source is implemented; its own service drains safely on close. Local WebView2 interactions have been tested on the developer machine, while the final window payload and clean-Windows acceptance remain distinct verification gates. A Linux source browser entry remains available, but a separate server is not a validated first-release target. PWA and Chrome extensions are not implemented.
 
 ## 当前发行阻塞
 
