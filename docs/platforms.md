@@ -120,7 +120,7 @@ Windows默认双击 `Start-MediaSlimX.cmd`，经 `scripts/start-window.ps1` 打�
 
 两种Windows源码入口都只使用本机Windows环境；便携窗口直接双击解压目录的 `MediaSlimX.exe`，使用自带解释器与 `%LOCALAPPDATA%\MediaSlimX\portable`。PowerShell执行策略参数只作用于该启动进程，不改系统全局策略。Windows本地系统选择器要求同一环境的Tcl/Tk，缺少时仍可使用工具内目录浏览器。
 
-WSL 用 ./start-wsl.sh；路径取脚本实际目录，不依赖用户终端的当前目录。
+普通 Linux 与 WSL 均用 ./start-linux.sh；旧 ./start-wsl.sh 继续转发到同一入口。路径取脚本实际目录，不依赖用户终端的当前目录。
 - .venv、8765、.mediaslimx/wsl。
 - 默认不自动开浏览器；可加 --open-browser。在服务器使用 SSH 隧道。
 - 自动创建时只调用 Linux python3，不调用 Windows Python 或复用 .venv-win。

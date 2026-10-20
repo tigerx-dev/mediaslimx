@@ -42,10 +42,10 @@ For the browser interface instead, run **`Start-MediaSlimX-Browser.cmd`**. It us
 Install **Python 3.10+** and, for MP4, FFmpeg and ffprobe for this platform. From the project directory run:
 
 ```bash
-./start-wsl.sh
+./start-linux.sh
 ```
 
-The first launch creates a separate Linux/WSL `.venv` and installs pinned dependencies. Open the **complete local URL** printed in the terminal. To scan media outside the project directory, add `--allow-root /absolute/media/path`. On a server, keep the service bound to loopback and use an SSH tunnel, for example:
+The same script works on standard Linux and WSL; the old `start-wsl.sh` entry remains available. The first launch creates a separate Linux/WSL `.venv` and installs pinned dependencies. Open the **complete local URL** printed in the terminal. To scan media outside the project directory, add `--allow-root /absolute/media/path`. On a server, keep the service bound to loopback and use an SSH tunnel, for example:
 
 ```bash
 ssh -N -L 8765:127.0.0.1:8765 user@server

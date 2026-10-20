@@ -42,10 +42,10 @@ MediaSlim X 是一个免费开源的本地批量压缩工具。扫描文件夹�
 需要 **Python 3.10+**；处理 MP4 时安装本平台的 FFmpeg、ffprobe。进入项目目录运行：
 
 ```bash
-./start-wsl.sh
+./start-linux.sh
 ```
 
-首次启动会建立 Linux/WSL 专用 `.venv` 并安装锁定依赖。浏览器访问终端给出的**完整本机地址**。扫描项目目录之外的媒体，可加 `--allow-root /absolute/media/path`。在服务器上保持服务只监听回环地址，通过 SSH 隧道访问，例如：
+同一脚本适用于普通 Linux 和 WSL；旧入口 `start-wsl.sh` 仍可用。首次启动会建立 Linux/WSL 专用 `.venv` 并安装锁定依赖。浏览器访问终端给出的**完整本机地址**。扫描项目目录之外的媒体，可加 `--allow-root /absolute/media/path`。在服务器上保持服务只监听回环地址，通过 SSH 隧道访问，例如：
 
 ```bash
 ssh -N -L 8765:127.0.0.1:8765 user@server
