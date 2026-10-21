@@ -4,7 +4,7 @@
 
 首发沿用展示名 **MediaSlim X** 和项目、仓库名 **MediaSlimX / mediaslimx**。现有图片、普通 MP4 与 PDF 的压缩、等比缩小和批量结果管理都属于“让文件变轻”的明确用途。介绍文案可写成“图片、视频与 PDF 批量优化工具”，让中文用户通过具体类型理解“媒体”，不把 PDF 误称为图片或视频。
 
-批量抠图、加水印、AI 处理和浏览器扩展尚未实现，也不作为首发名称或封面的承诺。若以后有实际使用需求，再判断它们属于 MediaSlim X 内的可选处理、独立的姊妹工具，还是需要更宽的产品名；不为尚未验证的方向提前改名。改名将涉及命令、数据目录、仓库链接、图标、文档与演示，须作为单独的兼容性工作处理。
+批量抠图、加水印、AI 处理和浏览器扩展尚未实现，也不作为首发名称或封面的承诺。若以后有实际使用需求，再判断它们属于 MediaSlim X 内的可选处理、独立的姊妹工具，还是需要更宽的产品名；不为尚未验证的方向提前改名。改名将涉及命令、数据目录、仓库链接、图标、文档与演示，须作为单独的兼容性工作处理。候选方向仅记录在[后续方向备忘](future-ideas.md)，不是产品路线承诺。
 
 The first release keeps **MediaSlim X** as the display name and **MediaSlimX / mediaslimx** for the project and repository. Its current purpose is batch optimization of images, ordinary MP4 videos and PDFs. Background removal, watermarking, AI processing and a browser extension are not implemented or implied by this name. Reconsider a broader name only if real usage warrants a wider product scope; a rename would require a separate compatibility review.
 
